@@ -29,6 +29,8 @@ class PandoraIRCBot : public IRCBot
     std::string m_server, m_nick, m_channel;
     std::uint16_t m_port;
 
+    bool m_halt;
+
     IRCConnection m_session;
     cb::PandoraBot m_bot{"b0dafd24ee35a477"};
 

@@ -50,8 +50,19 @@ namespace pbirc { namespace irc {
         {
             m_session.disconnect();
         }
+        else if(msg.data().find("!BotHalt") != std::string::npos)
+        {
+            m_halt = true;
+        }
+        else if(msg.data().find("!BotResume") != std::string::npos)
+        {
+            m_halt = false;
+        }
         else
-            m_session.send(IRCMessage("", "PRIVMSG", msg.params(), m_bot.think(msg.data())));
+        {
+            if(!m_halt)
+                m_session.send(IRCMessage("", "PRIVMSG", msg.params(), m_bot.think(msg.data())));
+        }
     }
 
     void PandoraIRCBot::onPING(IRCMessage const &msg)
@@ -66,6 +77,7 @@ namespace pbirc { namespace irc {
 
     void PandoraIRCBot::_Init()
     {
+        m_halt = false;
         m_session.addCallback("PRIVMSG", &PandoraIRCBot::onPRIVMSG, this);
         m_session.addCallback("PING",    &PandoraIRCBot::onPING,    this);
         m_session.addCallback("DEFAULT", &PandoraIRCBot::onDEFAULT, this);
