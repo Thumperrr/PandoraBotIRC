@@ -11,7 +11,7 @@ To be entered in the cplusplus.com monthly [community competition](http://cppcom
 - [ ] Speak only when spoken to
 - [ ] Keep track of who is talking to the bot -- Be able to run multiple conversations at once.
 - [ ] Implement !BotID command -- Change the PandoraBot you're talking to
-- [ ] Implement !BotQuit command -- Exit gracefully
+- [x] Implement !BotQuit command -- Exit gracefully
 - [ ] Implement !BotHalt command -- Temporarily stop the bot from replying to anything to keep the channel quiet
 - [ ] Implement !BotResume command -- Resumes the bot after !BotHalt has been called.
 

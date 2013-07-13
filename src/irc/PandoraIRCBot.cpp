@@ -45,7 +45,13 @@ namespace pbirc { namespace irc {
 
     void PandoraIRCBot::onPRIVMSG(IRCMessage const &msg)
     {
-        m_session.send(IRCMessage("", "PRIVMSG", msg.params(), m_bot.think(msg.data())));
+        //Check for commands
+        if(msg.data().find("!BotQuit") != std::string::npos)
+        {
+            m_session.disconnect();
+        }
+        else
+            m_session.send(IRCMessage("", "PRIVMSG", msg.params(), m_bot.think(msg.data())));
     }
 
     void PandoraIRCBot::onPING(IRCMessage const &msg)
