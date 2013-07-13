@@ -23,3 +23,12 @@ Execute `pbirc.bin` to run the bot.
 
 ####Other
 You're on your own for now.
+
+####Dependencies
+Requires SFML 2.0
+Requires Boost 1.35.0 or greater.
+
+SFML and boost must be built and installed in the default place on os x (/usr/local/lib and /usr/local/include/)
+
+Requires clang 3.3, which should be installed with the Apple Command Line Tools which you can get from the Apple developer web page.
+    If not, you can install it via MacPorts. 
