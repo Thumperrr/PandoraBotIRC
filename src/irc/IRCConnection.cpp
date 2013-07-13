@@ -10,22 +10,22 @@
 
 namespace pbirc { namespace irc {
 
-	bool IRCConnection::connect(std::string const &server, std::uint16_t const &port)
-	{
-		m_server_name = server;
-		m_port = port;
+    bool IRCConnection::connect(std::string const &server, std::uint16_t const &port)
+    {
+        m_server_name = server;
+        m_port = port;
 
-		return (m_status = (m_session.connect(server, port)));
-	}
+        return (m_status = (m_session.connect(server, port)));
+    }
 
-	void IRCConnection::disconnect()
-	{
-		m_status = false;
-		m_session.disconnect();
-	}
+    void IRCConnection::disconnect()
+    {
+        m_status = false;
+        m_session.disconnect();
+    }
 
-	IRCMessage IRCConnection::receive()
-	{
+    IRCMessage IRCConnection::receive()
+    {
         //if not connected return empty message
         if(!m_status) return IRCMessage();
         
@@ -49,34 +49,34 @@ namespace pbirc { namespace irc {
 
     bool IRCConnection::send(IRCMessage const &msg)
     {
-    	if(!m_status)
-    		return false;
+        if(!m_status)
+            return false;
 
-    	return (m_status = (m_session << msg.raw()));
+        return (m_status = (m_session << msg.raw()));
     }
 
     void IRCConnection::work()
     {
-    	IRCMessage msg = this->receive();
-    	if(msg.empty())
-    		return;
+        IRCMessage msg = this->receive();
+        if(msg.empty())
+            return;
 
-    	//find range of callbacks for this command
-    	auto range = m_callback_map.equal_range(msg.command());
-    	if(range.first != range.second) //at least one callback was found
-    	{
-    		for(auto i = range.first; i != range.second; ++i)
-    			i->second(msg);
-    	}
-    	else //otherwise search for default callbacks
-    	{
-    		auto default_range = m_callback_map.equal_range("DEFAULT");
-    		if(default_range.first != default_range.second)
-    		{
-    			for(auto i = default_range.first; i != default_range.second; ++i)
-    				i->second(msg);
-    		}
-    	} //do nothing if no callbacks were found
+        //find range of callbacks for this command
+        auto range = m_callback_map.equal_range(msg.command());
+        if(range.first != range.second) //at least one callback was found
+        {
+            for(auto i = range.first; i != range.second; ++i)
+                i->second(msg);
+        }
+        else //otherwise search for default callbacks
+        {
+            auto default_range = m_callback_map.equal_range("DEFAULT");
+            if(default_range.first != default_range.second)
+            {
+                for(auto i = default_range.first; i != default_range.second; ++i)
+                    i->second(msg);
+            }
+        } //do nothing if no callbacks were found
     }
 
 }}

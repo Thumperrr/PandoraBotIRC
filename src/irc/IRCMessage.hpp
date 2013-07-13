@@ -31,100 +31,100 @@ namespace pbirc { namespace irc {
  */
 class IRCMessage
 {
-	std::string m_sender, m_command, m_params, m_data;
+    std::string m_sender, m_command, m_params, m_data;
 
 public:
-	/*
-	 * Default constructor
-	 */
-	IRCMessage() = default;
-	/*
-	 * Default destructor
-	 */
-	~IRCMessage() = default;
+    /*
+     * Default constructor
+     */
+    IRCMessage() = default;
+    /*
+     * Default destructor
+     */
+    ~IRCMessage() = default;
 
-	/*
-	 * Constructor (1) - Paremeter initialized.
-	 *
-	 * @param[in] sender a string that contains the sender bit of the message
-	 * @param[in] command a string that contains the command bit of the message
-	 * @param[in] params a string that contains the parameters bit of the message
-	 * @param[in] data a string that contains the data bit of the message.
-	 */
-	IRCMessage(std::string const &sender, std::string const &command, std::string const &params, std::string const &data);
+    /*
+     * Constructor (1) - Paremeter initialized.
+     *
+     * @param[in] sender a string that contains the sender bit of the message
+     * @param[in] command a string that contains the command bit of the message
+     * @param[in] params a string that contains the parameters bit of the message
+     * @param[in] data a string that contains the data bit of the message.
+     */
+    IRCMessage(std::string const &sender, std::string const &command, std::string const &params, std::string const &data);
 
-	/*
-	 * Constructor (2) - Raw message initialized.
-	 * This constructor takes a raw message received from an irc server
-	 * and fills out the object accordingly.
-	 * 
-	 * This constructor will throw std::invalid_argument if raw does not
-	 * match the format of an irc message.
-	 * 
-	 * @param[in] raw string that contains the raw irc protocol message
-	 */
-	explicit IRCMessage(std::string const &raw);
+    /*
+     * Constructor (2) - Raw message initialized.
+     * This constructor takes a raw message received from an irc server
+     * and fills out the object accordingly.
+     * 
+     * This constructor will throw std::invalid_argument if raw does not
+     * match the format of an irc message.
+     * 
+     * @param[in] raw string that contains the raw irc protocol message
+     */
+    explicit IRCMessage(std::string const &raw);
 
-	/*
-	 * Copy constructor is defaulted.
-	 */
-	IRCMessage(IRCMessage const &) = default;
+    /*
+     * Copy constructor is defaulted.
+     */
+    IRCMessage(IRCMessage const &) = default;
 
-	/*
-	 * Assignment operator allows assignment between IRCMessages
-	 */
-	IRCMessage &operator=(IRCMessage const &rhs);
+    /*
+     * Assignment operator allows assignment between IRCMessages
+     */
+    IRCMessage &operator=(IRCMessage const &rhs);
 
-	/*
-	 * Comparison operator allows comparison of IRCMessages
-	 */
-	bool operator==(IRCMessage const &rhs);
+    /*
+     * Comparison operator allows comparison of IRCMessages
+     */
+    bool operator==(IRCMessage const &rhs);
 
-	std::string sender()  const { return m_sender;  } //Gets sender
-	std::string command() const { return m_command; } //Gets command
-	std::string params()  const { return m_params;  } //Gets params
-	std::string data()    const { return m_data;    } //Gets data
+    std::string sender()  const { return m_sender;  } //Gets sender
+    std::string command() const { return m_command; } //Gets command
+    std::string params()  const { return m_params;  } //Gets params
+    std::string data()    const { return m_data;    } //Gets data
 
-	void setSender (std::string const &sender ) { m_sender = sender;   } //Sets sender
-	void setCommand(std::string const &command) { m_command = command; } //Sets command
-	void setParams (std::string const &params ) { m_params = params;   } //Sets params
-	void setData   (std::string const &data   ) { m_data = data;       } //Sets data
+    void setSender (std::string const &sender ) { m_sender = sender;   } //Sets sender
+    void setCommand(std::string const &command) { m_command = command; } //Sets command
+    void setParams (std::string const &params ) { m_params = params;   } //Sets params
+    void setData   (std::string const &data   ) { m_data = data;       } //Sets data
 
-	/*
-	 * Uses varargs to add parameters.
-	 * 
-	 * Allows for the syntax: addParams("Param1", "Param2", "Param3", ...).
-	 * in the event that parameters need to be added one by one. 
-	 * (setParams does not allow this)
-	 */
-	template<typename... Params>
-	void addParams(std::string const &head, Params const &... tail)
-	{
-		m_params += m_params.empty() ? "" : " ";
-		m_params += head;
-		addParams(tail...);
-	}
-	/*
-	 * Edge condition for the recursive addParams
-	 */
-	void addParams() {}
+    /*
+     * Uses varargs to add parameters.
+     * 
+     * Allows for the syntax: addParams("Param1", "Param2", "Param3", ...).
+     * in the event that parameters need to be added one by one. 
+     * (setParams does not allow this)
+     */
+    template<typename... Params>
+    void addParams(std::string const &head, Params const &... tail)
+    {
+        m_params += m_params.empty() ? "" : " ";
+        m_params += head;
+        addParams(tail...);
+    }
+    /*
+     * Edge condition for the recursive addParams
+     */
+    void addParams() {}
 
-	/*
-	 * @return true if the object is empty
-	 *         false otherwise.
-	 */
-	bool empty() const;
+    /*
+     * @return true if the object is empty
+     *         false otherwise.
+     */
+    bool empty() const;
 
-	/*
-	 * @return the raw irc protocol message equivalent to the object.
-	 */
-	std::string raw() const;
+    /*
+     * @return the raw irc protocol message equivalent to the object.
+     */
+    std::string raw() const;
 
 private:
-	/*
-	 * Formats input -- Removes trailing spaces left from regex matches.
-	 */
-	std::string process_input(std::string const &str) { return util::removeTrailingSpaces(str); }
+    /*
+     * Formats input -- Removes trailing spaces left from regex matches.
+     */
+    std::string process_input(std::string const &str) { return util::removeTrailingSpaces(str); }
 };
 
 /*

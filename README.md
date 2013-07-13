@@ -6,7 +6,7 @@ To be entered in the cplusplus.com monthly [community competition](http://cppcom
 
 ####Planned features
 - [x] Respond to channel messages with chatter bot replies
-- [ ] Use server/port/nick/channel from command line arguments (not hard coded)
+- [x] Use server/port/nick/channel from command line arguments (not hard coded)
 - [ ] Connect to multiple channels
 - [ ] Speak only when spoken to
 - [ ] Keep track of who is talking to the bot -- Be able to run multiple conversations at once.

@@ -2,7 +2,7 @@
 
 namespace pbirc { namespace util { 
 
-	bool isReserved(char const &c)
+    bool isReserved(char const &c)
     {
         return !(isalnum(c) || c == '-' || c == '.' || c == '_' || c == '~');
     }
