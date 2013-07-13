@@ -2,7 +2,7 @@ PandoraBotIRC
 =============
 
 An IRC bot that acts as a Pandora chatter bot. 
-To be entered in the cplusplus.com monthly [http://cppcomp.netne.net/showthread.php?tid=4](community competition)
+To be entered in the cplusplus.com monthly [community competition](http://cppcomp.netne.net/showthread.php?tid=4)
 
 ####Planned features
 - [x] Respond to channel messages with chatter bot replies
