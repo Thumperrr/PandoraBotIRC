@@ -23,19 +23,19 @@ namespace pbirc { namespace cb {
         
     public:
         /**
-         * Default ctor deleted. Must provide a botid for PandoraBot to function.
+         * @brief Default ctor deleted. Must provide a botid for PandoraBot to function.
          */
         PandoraBot() = delete;
         
         /**
-         * PandoraBot constructor. 
+         * @brief PandoraBot constructor. 
          *
          * @param[in] botid An ID representing which Pandora Bot to connect with
          */
         PandoraBot(std::string const &botid);
         
         /**
-         * Function for talking with the Pandora Bot.
+         * @brief Function for talking with the Pandora Bot.
          *
          * @param msg A message to send to the bot
          * @return The bot's reply
@@ -44,8 +44,8 @@ namespace pbirc { namespace cb {
         
     private:
         /**
-         * Responsible for processing received data from the Pandora Bot.
-         * Sometimes the message will contain HTML, or HTML escape characters
+         * @brief Responsible for processing received data from the Pandora Bot.
+         * @details Sometimes the message will contain HTML, or HTML escape characters
          * that need to be removed. 
          *
          * @param[in] s string to be processed

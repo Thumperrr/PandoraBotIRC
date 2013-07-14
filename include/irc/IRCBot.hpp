@@ -23,29 +23,29 @@ class IRCBot
 {
 public:
     /**
-     * Default constructor
+     * @brief Default constructor
      */
     IRCBot() = default;
 
     /**
-     * Virtual default destructor
+     * @brief Virtual default destructor
      */
     virtual ~IRCBot() = default;
 
     /**
-     * Responsible for connecting to the irc server
+     * @brief esponsible for connecting to the irc server
      * and starting up the bot.
      */
     virtual bool connect() = 0;
 
     /**
-     * Responsible for disconnecting from the server
+     * @brief Responsible for disconnecting from the server
      * and stopping the bot
      */
     virtual void disconnect() = 0;
 
     /**
-     * Worker function for the bot. Responsible for doing
+     * @brief Worker function for the bot. Responsible for doing
      * everything else that the bot should do.
      */
     virtual int run() = 0;

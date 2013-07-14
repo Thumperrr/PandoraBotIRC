@@ -35,16 +35,16 @@ class IRCMessage
 
 public:
     /**
-     * Default constructor
+     * @brief Default constructor
      */
     IRCMessage() = default;
     /**
-     * Default destructor
+     * @brief Default destructor
      */
     ~IRCMessage() = default;
 
     /**
-     * Constructor (1) - Paremeter initialized.
+     * @brief Constructor (1) - Paremeter initialized.
      *
      * @param[in] sender a string that contains the sender bit of the message
      * @param[in] command a string that contains the command bit of the message
@@ -54,8 +54,8 @@ public:
     IRCMessage(std::string const &sender, std::string const &command, std::string const &params, std::string const &data);
 
     /**
-     * Constructor (2) - Raw message initialized.
-     * This constructor takes a raw message received from an irc server
+     * @brief Constructor (2) - Raw message initialized.
+     * @details This constructor takes a raw message received from an irc server
      * and fills out the object accordingly.
      * 
      * This constructor will throw std::invalid_argument if raw does not
@@ -66,34 +66,34 @@ public:
     explicit IRCMessage(std::string const &raw);
 
     /**
-     * Copy constructor is defaulted.
+     * @brief Copy constructor is defaulted.
      */
     IRCMessage(IRCMessage const &) = default;
 
     /**
-     * Assignment operator allows assignment between IRCMessages
+     * @brief Assignment operator allows assignment between IRCMessages
      */
     IRCMessage &operator=(IRCMessage const &rhs);
 
     /**
-     * Comparison operator allows comparison of IRCMessages
+     * @brief Comparison operator allows comparison of IRCMessages
      */
     bool operator==(IRCMessage const &rhs);
 
-    std::string sender()  const { return m_sender;  } //Gets sender
-    std::string command() const { return m_command; } //Gets command
-    std::string params()  const { return m_params;  } //Gets params
-    std::string data()    const { return m_data;    } //Gets data
+    std::string sender()  const { return m_sender;  } //!< Gets sender
+    std::string command() const { return m_command; } //!< Gets command
+    std::string params()  const { return m_params;  } //!< Gets params
+    std::string data()    const { return m_data;    } //!< Gets data
 
-    void setSender (std::string const &sender ) { m_sender = sender;   } //Sets sender
-    void setCommand(std::string const &command) { m_command = command; } //Sets command
-    void setParams (std::string const &params ) { m_params = params;   } //Sets params
-    void setData   (std::string const &data   ) { m_data = data;       } //Sets data
+    void setSender (std::string const &sender ) { m_sender = sender;   } //!< Sets sender
+    void setCommand(std::string const &command) { m_command = command; } //!< Sets command
+    void setParams (std::string const &params ) { m_params = params;   } //!< Sets params
+    void setData   (std::string const &data   ) { m_data = data;       } //!< Sets data
 
     /**
-     * Uses varargs to add parameters.
+     * @brief Uses varargs to add parameters.
      * 
-     * Allows for the syntax: addParams("Param1", "Param2", "Param3", ...).
+     * @details Allows for the syntax: addParams("Param1", "Param2", "Param3", ...).
      * in the event that parameters need to be added one by one. 
      * (setParams does not allow this)
      */
@@ -105,7 +105,7 @@ public:
         addParams(tail...);
     }
     /**
-     * Edge condition for the recursive addParams
+     * @brief Edge condition for the recursive @link addParams addParams @endlink
      */
     void addParams() {}
 
@@ -122,14 +122,22 @@ public:
 
 private:
     /**
-     * Formats input -- Removes trailing spaces left from regex matches.
+     * @brief Formats input -- Removes trailing spaces left from regex matches.
      */
     std::string process_input(std::string const &str) { return util::removeTrailingSpaces(str); }
 };
 
 /**
  * @relates IRCMessage
- * Global std::ostream operator<< overload for IRCMessages
+ * @brief Global std::ostream operator<< overload for IRCMessages
+ * @details
+ *  Outputs the IRC message in the following format:
+ * @code
+ *  Sender: 
+ *  Command:
+ *  Params:
+ *  Data:
+ * @endcode
  */
 std::ostream &operator<<(std::ostream &os, IRCMessage const &rhs);
 

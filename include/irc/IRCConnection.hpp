@@ -48,26 +48,26 @@ class IRCConnection
 
 public:
     /**
-     * Default constructor
+     * @brief Default constructor
      */
     IRCConnection() = default;
 
     /**
-     * Default destructor
+     * @brief Default destructor
      */
     ~IRCConnection() = default;
 
     /**
-     * Copy constructor is deleted
+     * @brief Copy constructor is deleted
      */
     IRCConnection(IRCConnection const &) = delete;
     /**
-     * Copy assignment is disabled
+     * @brief Copy assignment is disabled
      */
     IRCConnection &operator=(IRCConnection const &);
 
     /**
-     * Starts up a connection with an irc server
+     * @brief Starts up a connection with an irc server
      *
      * @param[in] server domain name or IP address of the irc server
      * @param[in] port the port on the server to connect to
@@ -75,14 +75,14 @@ public:
     bool connect(std::string const &server, std::uint16_t const &port);
 
     /**
-     * Disconnects from an irc server
+     * @brief Disconnects from an irc server
      */
     void disconnect();
 
     /**
-     * Receives data from the server and tries to format it into
-     * an IRCMessage. Stores excess data in m_data for later access.
-     *
+     * @brief Receives data from the server and tries to format it into
+     * an IRCMessage. 
+     * @details Stores excess data in m_data for later access.
      * Will set m_status to false and disconnect upon error.
      *
      * @return IRCMessage received from the server
@@ -90,8 +90,8 @@ public:
     IRCMessage receive();
 
     /**
-     * Sends an IRCMessage to the server
-     * Will set m_status to false and disconnect upon error.
+     * @brief Sends an IRCMessage to the server
+     * @details Will set m_status to false and disconnect upon error.
      *
      * @param[in] msg IRCMessage object to be sent
      * @return true if everything worked and all is well
@@ -100,9 +100,10 @@ public:
     bool send(IRCMessage const &msg);
 
     /**
-     * Operator bool
+     * @brief Operator bool
      * This function returns m_status
      *
+     * @details
      * Evaluates to true if all is good and we are connected to the server
      * Evaluates to false if we are disconnected or an error has occured
      */
@@ -119,7 +120,7 @@ public:
     std::uint16_t getPort()     const { return m_port       ; }
 
     /**
-     * Adds a callback function that is a member function of another object
+     * @brief Adds a callback function that is a member function of another object
      *
      * @param[in] cmd The command the callback function is connected to
      * @param[in] function the callback function
@@ -132,7 +133,7 @@ public:
     }
 
     /**
-     * Adds a callback function that is not a member function of another object
+     * @brief Adds a callback function that is not a member function of another object
      *
      * @param[in] cmd The command the callback function is connected to
      * @param[in] function the callback function
@@ -144,8 +145,8 @@ public:
     }
 
     /**
-     * This is the main worker function when using callback functionality.
-     * This function tries to receive a message from the server,
+     * @brief This is the main worker function when using callback functionality.
+     * @details This function tries to receive a message from the server,
      * format it into an IRCMessage object
      * then call the corresponding callbacks for the message.
      *
