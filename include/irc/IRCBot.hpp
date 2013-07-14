@@ -11,10 +11,10 @@
 
 namespace pbirc { namespace irc {
 
-/*
- * Abstract base class representing an IRC bot. 
+/**
+ * @brief Abstract base class representing an IRC bot. 
  * 
- * Has three functions that base classes must overload:
+ * @details Has three functions that base classes must overload:
  * connect()
  * disconnect()
  * run()
@@ -22,29 +22,29 @@ namespace pbirc { namespace irc {
 class IRCBot
 {
 public:
-    /*
+    /**
      * Default constructor
      */
     IRCBot() = default;
 
-    /*
+    /**
      * Virtual default destructor
      */
     virtual ~IRCBot() = default;
 
-    /*
+    /**
      * Responsible for connecting to the irc server
      * and starting up the bot.
      */
     virtual bool connect() = 0;
 
-    /*
+    /**
      * Responsible for disconnecting from the server
      * and stopping the bot
      */
     virtual void disconnect() = 0;
 
-    /*
+    /**
      * Worker function for the bot. Responsible for doing
      * everything else that the bot should do.
      */

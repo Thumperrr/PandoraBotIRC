@@ -61,7 +61,10 @@ namespace pbirc { namespace irc {
         else
         {
             if(!m_halt)
-                m_session.send(IRCMessage("", "PRIVMSG", msg.params(), m_bot.think(msg.data())));
+            {
+                if(msg.data().find(m_nick) != std::string::npos) //bot is being talked to
+                    m_session.send(IRCMessage("", "PRIVMSG", msg.params(), m_bot.think(msg.data())));
+            }
         }
     }
 

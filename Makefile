@@ -4,7 +4,7 @@
 CPP = clang++
 CC = clang
 CPPFLAGS += -std=c++11 -stdlib=libc++ -Wall -Wextra -pedantic-errors
-INCLUDE = -Isrc -I/usr/local/include/
+INCLUDE = -Isrc -I/usr/local/include/ -Iinclude/ -Iinclude/chatterbot/ -Iinclude/irc/ -Iinclude/util/
 
 LIB = -framework sfml-network -framework sfml-system
 

@@ -19,9 +19,9 @@
 
 namespace pbirc { namespace irc {
 
-/*
- * Class representing a Pandora IRC bot. 
- * This bot will connect to an IRC server
+/**
+ * @brief Class representing a Pandora IRC bot. 
+ * @details his bot will connect to an IRC server
  * and respond to users as a Pandora chatterbot.
  */
 class PandoraIRCBot : public IRCBot
@@ -35,17 +35,17 @@ class PandoraIRCBot : public IRCBot
     cb::PandoraBot m_bot{"b0dafd24ee35a477"};
 
 public:
-    /*
+    /**
      * Default constructor
      */
     PandoraIRCBot() { _Init(); }
 
-    /*
+    /**
      * Default destructor
      */
     virtual ~PandoraIRCBot() = default;
 
-    /*
+    /**
      * Value initialized constructor
      *
      * @param[in] server the irc server to connect to
@@ -55,27 +55,27 @@ public:
      */
     PandoraIRCBot(std::string const &server, std::uint16_t const &port, std::string const &nick, std::string const &chan);
 
-    /*
+    /**
      * Copy constructor deleted
      */
     PandoraIRCBot(PandoraIRCBot const &) = delete;
 
-    /*
+    /**
      * Copy assignment disabled
      */
     PandoraIRCBot &operator=(PandoraIRCBot const &);
 
-    /*
+    /**
      * Responsible for connecting to the irc server
      */
     bool connect() override;
 
-    /*
+    /**
      * Responsible for disconnecting from the irc server
      */
     void disconnect() override;
 
-    /*
+    /**
      * Main worker function. Responsible for doing everything the bot needs to do.
      */
     int run() override;
@@ -91,26 +91,32 @@ public:
     std::string   getChannel() const { return m_channel;} //Gets channel
 public: //CALLBACKS DEFINED HERE
 
-    /*
+    /**
      * this callback handles PRIVMSG commands sent from the server
      * -- Responds with PandoraBot response
      */
     void onPRIVMSG(IRCMessage const &msg);
 
-    /*
+    /**
      * this callback handles PING commands sent from the server
      * -- Responds with PONG
      */
     void onPING(IRCMessage const &msg);
 
-    /*
+    /**
+     * this callback handles PART commands.
+     * Says something vulgar about a user after he leaves.
+     */
+    void onPART(IRCMessage const &msg);
+    
+    /**
      * Default callback. Handles all other messages.
      * Currently outputs them in the terminal.
      */
     void onDEFAULT(IRCMessage const &msg);
 
 private:
-    /*
+    /**
      * This function does initialization tasks for PandoraIRCBot
      * -- Registers callbacks with m_session.
      */

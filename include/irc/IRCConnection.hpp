@@ -17,7 +17,7 @@
 
 namespace pbirc { namespace irc {
 
-/*
+/**
  * @brief IRCConnection class represents a connection to an irc server.
  * 
  * @details This class can register callback functions to call when a certain
@@ -47,26 +47,26 @@ class IRCConnection
     TCPConnection m_session;
 
 public:
-    /*
+    /**
      * Default constructor
      */
     IRCConnection() = default;
 
-    /*
+    /**
      * Default destructor
      */
     ~IRCConnection() = default;
 
-    /*
+    /**
      * Copy constructor is deleted
      */
     IRCConnection(IRCConnection const &) = delete;
-    /*
+    /**
      * Copy assignment is disabled
      */
     IRCConnection &operator=(IRCConnection const &);
 
-    /*
+    /**
      * Starts up a connection with an irc server
      *
      * @param[in] server domain name or IP address of the irc server
@@ -74,12 +74,12 @@ public:
      */
     bool connect(std::string const &server, std::uint16_t const &port);
 
-    /*
+    /**
      * Disconnects from an irc server
      */
     void disconnect();
 
-    /*
+    /**
      * Receives data from the server and tries to format it into
      * an IRCMessage. Stores excess data in m_data for later access.
      *
@@ -89,7 +89,7 @@ public:
      */
     IRCMessage receive();
 
-    /*
+    /**
      * Sends an IRCMessage to the server
      * Will set m_status to false and disconnect upon error.
      *
@@ -99,7 +99,7 @@ public:
      */
     bool send(IRCMessage const &msg);
 
-    /*
+    /**
      * Operator bool
      * This function returns m_status
      *
@@ -108,7 +108,7 @@ public:
      */
     operator bool() { return m_status; }
 
-    /*
+    /**
      * @return name of the server that the object is connected to
      */
     std::string getServerName() const { return m_server_name; }
@@ -118,7 +118,7 @@ public:
      */
     std::uint16_t getPort()     const { return m_port       ; }
 
-    /*
+    /**
      * Adds a callback function that is a member function of another object
      *
      * @param[in] cmd The command the callback function is connected to
@@ -131,7 +131,7 @@ public:
         m_callback_map.insert(callback_map_t::value_type(cmd, std::bind(function, object, std::placeholders::_1)));
     }
 
-    /*
+    /**
      * Adds a callback function that is not a member function of another object
      *
      * @param[in] cmd The command the callback function is connected to
@@ -143,7 +143,7 @@ public:
         m_callback_map.insert(callback_map_t::value_type(cmd, std::bind(function, std::placeholders::_1)));
     }
 
-    /*
+    /**
      * This is the main worker function when using callback functionality.
      * This function tries to receive a message from the server,
      * format it into an IRCMessage object

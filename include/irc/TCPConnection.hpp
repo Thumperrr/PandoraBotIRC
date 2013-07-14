@@ -17,8 +17,8 @@
 
 namespace pbirc { namespace irc {
 
-/*
- * TCPConnection encapsulates a tcp connection with SFML sockets
+/**
+ * @brief TCPConnection encapsulates a tcp connection with SFML sockets
  */
 class TCPConnection
 {
@@ -29,13 +29,13 @@ class TCPConnection
     bool          m_status; 
 
 public:
-    /*
+    /**
      * Default constructor. 
      * Does nothing but set 'm_status' to false.
      */
     TCPConnection();
 
-    /*
+    /**
      * Default destructor
      */
     ~TCPConnection() = default;
@@ -44,7 +44,7 @@ public:
     TCPConnection(TCPConnection const &) = delete;
     TCPConnection &operator=(TCPConnection const &);
 
-    /*
+    /**
      * Starts up the tcp connection
      *
      * @param[in] server_name domain name or IP of the server to connect to
@@ -52,12 +52,12 @@ public:
      */
     bool connect(std::string const &server_name, std::uint16_t const &port);
 
-    /*
+    /**
      * Disconnects the tcp connection. 
      */
     void disconnect();
 
-    /*
+    /**
      * Get the port to which the socket is bound locally.
      * This function only forwards sf::Socket::getLocalPort().
      *
@@ -65,7 +65,7 @@ public:
      */
     std::uint16_t getLocalPort();
 
-    /*
+    /**
      * Get the port of the connected peer to which the socket is connected.
      * This function only forwards sf::Socket::getRemotePort().
      *
@@ -73,7 +73,7 @@ public:
      */
     std::uint16_t getRemotePort();
 
-    /*
+    /**
      * operator bool
      * This function returns m_status. 
      * 
@@ -82,7 +82,7 @@ public:
      */
     operator bool() { return m_status; }
 
-    /*
+    /**
      * operator << overload.
      * Is used to send data to the server.
      * This function will disconnect and set m_status to false upon error.
@@ -91,7 +91,7 @@ public:
      */
     TCPConnection &operator<<(std::string const &rhs);
 
-    /*
+    /**
      * operator >> overload.
      * Is used to receive data from the server.
      * This function will disconnect and set m_status to false upon error.

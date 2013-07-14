@@ -12,8 +12,8 @@
 
 namespace pbirc { namespace cb {
 
-/*
- * Abstract base class representing a chatterbot.
+/**
+ * @brief Abstract base class representing a chatterbot.
  */
 class ChatterBot
 {
