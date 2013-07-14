@@ -16,6 +16,7 @@
 
 #include <cstdint>
 #include <string>
+#include <map>
 
 namespace pbirc { namespace irc {
 
@@ -26,13 +27,16 @@ namespace pbirc { namespace irc {
  */
 class PandoraIRCBot : public IRCBot
 {
+    typedef std::map<std::string, cb::PandoraBot> conversations_t;
+    const std::string botid_default{"b0dafd24ee35a477"};
+
     std::string m_server, m_nick, m_channel;
     std::uint16_t m_port;
 
-    bool m_halt;
+    bool m_halt; //!< True if the bot is disabled. False otherwise.
 
-    IRCConnection m_session;
-    cb::PandoraBot m_bot{"b0dafd24ee35a477"};
+    IRCConnection   m_session;       //!< tcp session with the irc server
+    conversations_t m_conversations; //!< Key: user name. Value: Pandora bot. 
 
 public:
     /**

@@ -9,11 +9,13 @@ To be entered in the cplusplus.com monthly [community competition](http://cppcom
 - [x] Use server/port/nick/channel from command line arguments (not hard coded)
 - [ ] Connect to multiple channels
 - [ ] Speak only when spoken to
-- [ ] Keep track of who is talking to the bot -- Be able to run multiple conversations at once.
+- [x] Keep track of who is talking to the bot -- Be able to run multiple conversations at once.
 - [ ] Implement !BotID command -- Change the PandoraBot you're talking to
 - [x] Implement !BotQuit command -- Exit gracefully
-- [x] Implement !BotHalt command -- Temporarily stop the bot from replying to anything to keep the channel quiet
+- [x] Implement !BotHalt command -- Temporarily stop the bot from replying to anything to keep the channel quiet. Puts the bot in an idle state.
 - [x] Implement !BotResume command -- Resumes the bot after !BotHalt has been called.
+- [x] Implement !BotTalk command -- Starts a conversation between a user and the bot. The bot will ignore a user until they have typed !BotTalk, then it will start talking to them.
+- [x] Implement !BotStop command -- Stops a conversation between the user and the bot.
 - [ ] Implement !BotHelp command -- Sends a list of all possible commands
 
 Building

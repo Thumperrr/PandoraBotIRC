@@ -58,12 +58,24 @@ namespace pbirc { namespace irc {
         {
             m_halt = false;
         }
+        else if(msg.data().find("!BotTalk") != std::string::npos) //start conversation with user
+        {
+            m_conversations.insert(conversations_t::value_type(msg.sender(), cb::PandoraBot(botid_default)));
+        }
+        else if(msg.data().find("!BotStop") != std::string::npos)
+        {
+            m_conversations.erase(msg.sender());
+        }
         else
         {
             if(!m_halt)
             {
-                if(msg.data().find(m_nick) != std::string::npos) //bot is being talked to
-                    m_session.send(IRCMessage("", "PRIVMSG", msg.params(), m_bot.think(msg.data())));
+                auto i = m_conversations.find(msg.sender());
+                if(i != m_conversations.end())
+                {
+                    std::string nick = i->first.substr(0, i->first.find("!"));
+                    m_session.send(IRCMessage("", "PRIVMSG", msg.params(), nick + ", " + i->second.think(msg.data())));
+                }
             }
         }
     }
