@@ -1,4 +1,4 @@
-PandoraBotIRC
+PandoraBotIRC {#mainpage}
 =============
 
 An IRC bot that acts as a Pandora chatter bot. 
