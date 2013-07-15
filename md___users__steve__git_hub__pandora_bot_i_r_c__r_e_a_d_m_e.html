@@ -81,7 +81,7 @@ $(document).ready(function(){initNavTree('md___users__steve__git_hub__pandora_bo
 </ul>
 <h1>Building </h1>
 <h4>OS x 10.8+</h4>
-<p>Clone the git repository, and run <code>make</code> from the terminal. Execute <code>pbirc.bin</code> to run the bot.</p>
+<p><a href="https://github.com/Thumperrr/PandoraBotIRC/archive/master.zip">Clone</a> the git repository. Run <code>make</code> from the terminal where you saved the repo. <code>pbirc</code> is the bot executable.</p>
 <h4>Other</h4>
 <p>You're on your own for now.</p>
 <h4>Dependencies</h4>
@@ -91,14 +91,30 @@ $(document).ready(function(){initNavTree('md___users__steve__git_hub__pandora_bo
 </ul>
 <p>SFML and boost must be built and installed in the default place on os x (/usr/local/lib and /usr/local/include/)</p>
 <ul>
-<li>Requires clang 3.3, which should be installed with the Apple Command Line Tools which you can get from the Apple developer web page. If not, you can install it via MacPorts. </li>
+<li>Requires clang 3.3, which should be installed with the Apple Command Line Tools which you can get from the Apple developer web page. If not, you can install it via MacPorts.</li>
 </ul>
+<h1>Usage </h1>
+<h4>Command Line</h4>
+<p>PandoraBotIRC is designed to be a command line tool. Four parameters must be supplied to <code>pbirc</code> when ran; server, port, nick, channel. Example: <code>./pbirc irc.freenode.net 6667 pandoraBot, cplusplus</code> will start the bot on irc.freenode.net, port 6667, with nick "pandoraBot" in the channel "#cplusplus".</p>
+<h4>Talking to the bot</h4>
+<p>In an IRC chat, to begin a conversation with the bot, type the !BotTalk command. The bot should greet you. Now, anything you type the bot will consider directed toward it, and will respond promptly. To stop a conversation with the bot, type !BotStop.</p>
+<p>The bot is capable of having conversations with multiple users at the same time. Using !BotTalk will not interfere with another users's conversation.</p>
+<h4>Other Commands</h4>
+<ul>
+<li>Typing "!BotQuit" will terminate the bot.</li>
+<li>Typing "!BotHalt" will put the bot in an idle state, temporarily suspending it from responding to anyone.</li>
+<li>Typing "!BotResume" will reverse the effects of !BotHalt</li>
+<li>Typing "!BotID &lt;ID&gt;" will change the bot you are talking to to the bot specified by the parameter ID. This command only works if you have already started a conversation with the bot by typing !BotTalk. For more on BotIDs, see the PandoraBot reference.</li>
+<li>Typing "!BotHelp" will tell you all of the commands the bot handles.</li>
+</ul>
+<h1>TODO: </h1>
+<p>Licensing </p>
 </div></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="footer">Generated on Mon Jul 15 2013 15:11:11 for PandoraBotIRC by
+    <li class="footer">Generated on Mon Jul 15 2013 16:00:44 for PandoraBotIRC by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.4 </li>
   </ul>
