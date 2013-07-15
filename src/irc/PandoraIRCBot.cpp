@@ -68,14 +68,15 @@ namespace pbirc { namespace irc {
         }
         else if(msg.data().find("!BotHelp") != std::string::npos)
         {
-            m_session.send(IRCMessage("", "PRIVMSG", msg.params(), "PandoraBotIRC: An irc bot that acts as a Pandora chatter bot."));
-            m_session.send(IRCMessage("", "PRIVMSG", msg.params(), "Command list:"));
-            m_session.send(IRCMessage("", "PRIVMSG", msg.params(), "!BotQuit -- Shuts the bot down."));
-            m_session.send(IRCMessage("", "PRIVMSG", msg.params(), "!BotHalt -- Puts the bot in an idle state. Continues running but doesn't reply to anyone."));
-            m_session.send(IRCMessage("", "PRIVMSG", msg.params(), "!BotResume -- Resumes the bot after !BotHalt has been called."));
-            m_session.send(IRCMessage("", "PRIVMSG", msg.params(), "!BotTalk -- Start a conversation with the bot! The bot will start responding to things you type."));
-            m_session.send(IRCMessage("", "PRIVMSG", msg.params(), "!BotStop -- Stop the bot from talking to you."));
-            m_session.send(IRCMessage("", "PRIVMSG", msg.params(), "!BotHelp -- Display this message."));
+            privmsg(msg.params(), "PandoraBotIRC: An irc bot that acts as a Pandora chatter bot.");
+            privmsg(msg.params(), "Command list:");
+            privmsg(msg.params(), "!BotQuit -- Shuts the bot down.");
+            privmsg(msg.params(), "!BotHalt -- Puts the bot in an idle state. Continues running but doesn't reply to anyone.");
+            privmsg(msg.params(), "!BotResume -- Resumes the bot after !BotHalt has been called.");
+            privmsg(msg.params(), "!BotTalk -- Start a conversation with the bot! The bot will start responding to things you type.");
+            privmsg(msg.params(), "!BotStop -- Stop the bot from talking to you.");
+            privmsg(msg.params(), "!BotHelp -- Display this message.");
+        
         }
         else
         {
@@ -85,7 +86,7 @@ namespace pbirc { namespace irc {
                 if(i != m_conversations.end())
                 {
                     std::string nick = i->first.substr(0, i->first.find("!"));
-                    m_session.send(IRCMessage("", "PRIVMSG", msg.params(), nick + ", " + i->second.think(msg.data())));
+                    privmsg(msg.params(), nick + ", " + i->second.think(msg.data()));
                 }
             }
         }
@@ -107,6 +108,11 @@ namespace pbirc { namespace irc {
         m_session.addCallback("PRIVMSG", &PandoraIRCBot::onPRIVMSG, this);
         m_session.addCallback("PING",    &PandoraIRCBot::onPING,    this);
         m_session.addCallback("DEFAULT", &PandoraIRCBot::onDEFAULT, this);
+    }
+
+    void PandoraIRCBot::privmsg(std::string const &channel, std::string const &msg)
+    {
+        m_session.send(IRCMessage("", "PRIVMSG", channel, msg));
     }
 
 }}

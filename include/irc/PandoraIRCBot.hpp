@@ -126,6 +126,16 @@ private:
      * @details Registers callbacks with m_session.
      */
     void _Init();
+
+    /**
+     * @brief Sends a private message to the server
+     * @details privmsgs were being sent so much in this class
+     * so it made sense to make a function for it to save some typing.
+     *
+     * @param[in] channel The channel the privmsg should be sent to. (goes in IRCMessage::params field)
+     * @param[in] msg The privmsg
+     */
+    void privmsg(std::string const &channel, std::string const &msg);
 };
 
 }}
