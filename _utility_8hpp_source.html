@@ -4,10 +4,17 @@
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.4"/>
-<title>PandoraBotIRC: include/util/Utility.hpp Source File</title>
+<title>PandoraBotIRC: /Users/Steve/GitHub/PandoraBotIRC/include/util/Utility.hpp Source File</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript">
+  $(document).ready(initResizable);
+  $(window).load(resizeHeight);
+</script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
@@ -20,7 +27,7 @@
    <div id="projectname">PandoraBotIRC
    &#160;<span id="projectnumber">1.0.0</span>
    </div>
-   <div id="projectbrief">IRC bot that acts as a chatter bot</div>
+   <div id="projectbrief">An irc bot that acts as a Pandora chatter bot</div>
   </td>
  </tr>
  </tbody>
@@ -31,6 +38,8 @@
   <div id="navrow1" class="tabs">
     <ul class="tablist">
       <li><a href="index.html"><span>Main&#160;Page</span></a></li>
+      <li><a href="pages.html"><span>Related&#160;Pages</span></a></li>
+      <li><a href="namespaces.html"><span>Namespaces</span></a></li>
       <li><a href="annotated.html"><span>Classes</span></a></li>
       <li class="current"><a href="files.html"><span>Files</span></a></li>
     </ul>
@@ -38,19 +47,30 @@
   <div id="navrow2" class="tabs2">
     <ul class="tablist">
       <li><a href="files.html"><span>File&#160;List</span></a></li>
+      <li><a href="globals.html"><span>File&#160;Members</span></a></li>
     </ul>
   </div>
-<div id="nav-path" class="navpath">
-  <ul>
-<li class="navelem"><a class="el" href="dir_d44c64559bbebec7f509842c48db8b23.html">include</a></li><li class="navelem"><a class="el" href="dir_586ad3c2f85d776b984733890d824e3e.html">util</a></li>  </ul>
-</div>
 </div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+$(document).ready(function(){initNavTree('_utility_8hpp_source.html','');});
+</script>
+<div id="doc-content">
 <div class="header">
   <div class="headertitle">
 <div class="title">Utility.hpp</div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="comment">//</span></div>
+<a href="_utility_8hpp.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="comment">//</span></div>
 <div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="comment">//  Utility.hpp</span></div>
 <div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="comment">//  PandoraBotIRC</span></div>
 <div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="comment">//</span></div>
@@ -68,32 +88,36 @@
 <div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="preprocessor">#include &lt;regex&gt;</span></div>
 <div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="preprocessor">#include &lt;string&gt;</span></div>
 <div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;</div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="keyword">namespace </span>pbirc { <span class="keyword">namespace </span>util {</div>
+<div class="line"><a name="l00019"></a><span class="lineno"><a class="code" href="namespacepbirc_1_1util.html">   19</a></span>&#160;<span class="keyword">namespace </span>pbirc { <span class="keyword">namespace </span>util {</div>
 <div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;    </div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;    <span class="keywordtype">bool</span> isReserved(<span class="keywordtype">char</span> <span class="keyword">const</span> &amp;c);</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;    <span class="keywordtype">bool</span> <a class="code" href="namespacepbirc_1_1util.html#a6bf1ef9f2be42319248b06e71d9ae3fb">isReserved</a>(<span class="keywordtype">char</span> <span class="keyword">const</span> &amp;c);</div>
 <div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;    </div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;    std::string URLEncode(std::string <span class="keyword">const</span> &amp;s);</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;    std::string <a class="code" href="namespacepbirc_1_1util.html#a810945cd88fbb8a383afdd3928717116">URLEncode</a>(std::string <span class="keyword">const</span> &amp;s);</div>
 <div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;    </div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;    std::string HTMLEscape(std::string s);</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;    std::string <a class="code" href="namespacepbirc_1_1util.html#accc7466350d5491336f68afeff5d783b">HTMLEscape</a>(std::string s);</div>
 <div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;    </div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;    std::string HTMLUnEscape(std::string s);</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;    std::string <a class="code" href="namespacepbirc_1_1util.html#ab595d490db180b5851a88590da4ea5ec">HTMLUnEscape</a>(std::string s);</div>
 <div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;    </div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;    std::string stripHtml(std::string <span class="keyword">const</span> &amp;s);</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;    std::string <a class="code" href="namespacepbirc_1_1util.html#af96d2d8bfe9c2595e1c82e5b89ddcdae">stripHtml</a>(std::string <span class="keyword">const</span> &amp;s);</div>
 <div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;    </div>
 <div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;    <span class="keyword">template</span>&lt;<span class="keyword">typename</span> ReverseIter&gt;</div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;    <span class="keyword">typename</span> ReverseIter::iterator_type make_forward(ReverseIter i);</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;    <span class="keyword">typename</span> ReverseIter::iterator_type <a class="code" href="namespacepbirc_1_1util.html#a27e54815d4407b9bf2e425c119fe6efa">make_forward</a>(ReverseIter i);</div>
 <div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;    </div>
-<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;    std::string removeLeadingSpaces(std::string <span class="keyword">const</span> &amp;s);</div>
-<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;    std::string removeTrailingSpaces(std::string <span class="keyword">const</span> &amp;s);</div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;    std::string <a class="code" href="namespacepbirc_1_1util.html#a715e9c43be0a2c7c09511db1647fc42f">removeLeadingSpaces</a>(std::string <span class="keyword">const</span> &amp;s);</div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;    std::string <a class="code" href="namespacepbirc_1_1util.html#ab5811473de7c541ae150100e5f50805f">removeTrailingSpaces</a>(std::string <span class="keyword">const</span> &amp;s);</div>
 <div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;}}</div>
 <div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;</div>
 <div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;<span class="preprocessor">#endif</span></div>
 </div><!-- fragment --></div><!-- contents -->
+</div><!-- doc-content -->
 <!-- start footer part -->
-<hr class="footer"/><address class="footer"><small>
-Generated on Sun Jul 14 2013 16:03:52 for PandoraBotIRC by &#160;<a href="http://www.doxygen.org/index.html">
-<img class="footer" src="doxygen.png" alt="doxygen"/>
-</a> 1.8.4
-</small></address>
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="dir_99afdd53072331c398eb332b8104222c.html">PandoraBotIRC</a></li><li class="navelem"><a class="el" href="dir_cd8d7787147611518db42da0b7dacd3e.html">include</a></li><li class="navelem"><a class="el" href="dir_bb00a3463a7afe10d53cc2508875cd6d.html">util</a></li><li class="navelem"><a class="el" href="_utility_8hpp.html">Utility.hpp</a></li>
+    <li class="footer">Generated on Mon Jul 15 2013 14:50:09 for PandoraBotIRC by
+    <a href="http://www.doxygen.org/index.html">
+    <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.4 </li>
+  </ul>
+</div>
 </body>
 </html>

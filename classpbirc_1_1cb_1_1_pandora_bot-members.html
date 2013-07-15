@@ -8,6 +8,13 @@
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript">
+  $(document).ready(initResizable);
+  $(window).load(resizeHeight);
+</script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
@@ -20,7 +27,7 @@
    <div id="projectname">PandoraBotIRC
    &#160;<span id="projectnumber">1.0.0</span>
    </div>
-   <div id="projectbrief">IRC bot that acts as a chatter bot</div>
+   <div id="projectbrief">An irc bot that acts as a Pandora chatter bot</div>
   </td>
  </tr>
  </tbody>
@@ -31,6 +38,8 @@
   <div id="navrow1" class="tabs">
     <ul class="tablist">
       <li><a href="index.html"><span>Main&#160;Page</span></a></li>
+      <li><a href="pages.html"><span>Related&#160;Pages</span></a></li>
+      <li><a href="namespaces.html"><span>Namespaces</span></a></li>
       <li class="current"><a href="annotated.html"><span>Classes</span></a></li>
       <li><a href="files.html"><span>Files</span></a></li>
     </ul>
@@ -43,11 +52,21 @@
       <li><a href="functions.html"><span>Class&#160;Members</span></a></li>
     </ul>
   </div>
-<div id="nav-path" class="navpath">
-  <ul>
-<li class="navelem"><b>pbirc</b></li><li class="navelem"><b>cb</b></li><li class="navelem"><a class="el" href="classpbirc_1_1cb_1_1_pandora_bot.html">PandoraBot</a></li>  </ul>
-</div>
 </div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+$(document).ready(function(){initNavTree('classpbirc_1_1cb_1_1_pandora_bot.html','');});
+</script>
+<div id="doc-content">
 <div class="header">
   <div class="headertitle">
 <div class="title">pbirc::cb::PandoraBot Member List</div>  </div>
@@ -56,17 +75,20 @@
 
 <p>This is the complete list of members for <a class="el" href="classpbirc_1_1cb_1_1_pandora_bot.html">pbirc::cb::PandoraBot</a>, including all inherited members.</p>
 <table class="directory">
-  <tr bgcolor="#f0f0f0" class="even"><td class="entry"><b>ChatterBot</b>()=default (defined in <a class="el" href="classpbirc_1_1cb_1_1_chatter_bot.html">pbirc::cb::ChatterBot</a>)</td><td class="entry"><a class="el" href="classpbirc_1_1cb_1_1_chatter_bot.html">pbirc::cb::ChatterBot</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="classpbirc_1_1cb_1_1_chatter_bot.html#a4f4a1a64b0dbdad6f00ee9c0bb84abe2">ChatterBot</a>()=default</td><td class="entry"><a class="el" href="classpbirc_1_1cb_1_1_chatter_bot.html">pbirc::cb::ChatterBot</a></td><td class="entry"></td></tr>
   <tr><td class="entry"><a class="el" href="classpbirc_1_1cb_1_1_pandora_bot.html#aa1bc3532bfa298d91e2532f9abd23a75">PandoraBot</a>()=delete</td><td class="entry"><a class="el" href="classpbirc_1_1cb_1_1_pandora_bot.html">pbirc::cb::PandoraBot</a></td><td class="entry"></td></tr>
   <tr class="even"><td class="entry"><a class="el" href="classpbirc_1_1cb_1_1_pandora_bot.html#a16289995f551b52a9b2e2b890542092b">PandoraBot</a>(std::string const &amp;botid)</td><td class="entry"><a class="el" href="classpbirc_1_1cb_1_1_pandora_bot.html">pbirc::cb::PandoraBot</a></td><td class="entry"></td></tr>
   <tr><td class="entry"><a class="el" href="classpbirc_1_1cb_1_1_pandora_bot.html#ae512f403a1ded076968fa4f71321dadc">think</a>(std::string const &amp;msg)</td><td class="entry"><a class="el" href="classpbirc_1_1cb_1_1_pandora_bot.html">pbirc::cb::PandoraBot</a></td><td class="entry"><span class="mlabel">virtual</span></td></tr>
-  <tr bgcolor="#f0f0f0" class="even"><td class="entry"><b>~ChatterBot</b>()=default (defined in <a class="el" href="classpbirc_1_1cb_1_1_chatter_bot.html">pbirc::cb::ChatterBot</a>)</td><td class="entry"><a class="el" href="classpbirc_1_1cb_1_1_chatter_bot.html">pbirc::cb::ChatterBot</a></td><td class="entry"><span class="mlabel">virtual</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="classpbirc_1_1cb_1_1_chatter_bot.html#a76f94029a6b497d00c1c7285b355f9a1">~ChatterBot</a>()=default</td><td class="entry"><a class="el" href="classpbirc_1_1cb_1_1_chatter_bot.html">pbirc::cb::ChatterBot</a></td><td class="entry"><span class="mlabel">virtual</span></td></tr>
 </table></div><!-- contents -->
+</div><!-- doc-content -->
 <!-- start footer part -->
-<hr class="footer"/><address class="footer"><small>
-Generated on Sun Jul 14 2013 16:03:52 for PandoraBotIRC by &#160;<a href="http://www.doxygen.org/index.html">
-<img class="footer" src="doxygen.png" alt="doxygen"/>
-</a> 1.8.4
-</small></address>
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="footer">Generated on Mon Jul 15 2013 14:50:09 for PandoraBotIRC by
+    <a href="http://www.doxygen.org/index.html">
+    <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.4 </li>
+  </ul>
+</div>
 </body>
 </html>

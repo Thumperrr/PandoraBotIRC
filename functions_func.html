@@ -8,6 +8,13 @@
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript">
+  $(document).ready(initResizable);
+  $(window).load(resizeHeight);
+</script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
@@ -20,7 +27,7 @@
    <div id="projectname">PandoraBotIRC
    &#160;<span id="projectnumber">1.0.0</span>
    </div>
-   <div id="projectbrief">IRC bot that acts as a chatter bot</div>
+   <div id="projectbrief">An irc bot that acts as a Pandora chatter bot</div>
   </td>
  </tr>
  </tbody>
@@ -31,6 +38,8 @@
   <div id="navrow1" class="tabs">
     <ul class="tablist">
       <li><a href="index.html"><span>Main&#160;Page</span></a></li>
+      <li><a href="pages.html"><span>Related&#160;Pages</span></a></li>
+      <li><a href="namespaces.html"><span>Namespaces</span></a></li>
       <li class="current"><a href="annotated.html"><span>Classes</span></a></li>
       <li><a href="files.html"><span>Files</span></a></li>
     </ul>
@@ -67,6 +76,20 @@
     </ul>
   </div>
 </div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+$(document).ready(function(){initNavTree('functions_func.html','');});
+</script>
+<div id="doc-content">
 <div class="contents">
 &#160;
 
@@ -81,21 +104,30 @@
 
 
 <h3><a class="anchor" id="index_c"></a>- c -</h3><ul>
+<li>ChatterBot()
+: <a class="el" href="classpbirc_1_1cb_1_1_chatter_bot.html#a4f4a1a64b0dbdad6f00ee9c0bb84abe2">pbirc::cb::ChatterBot</a>
+</li>
+<li>command()
+: <a class="el" href="classpbirc_1_1irc_1_1_i_r_c_message.html#a906707b7c9f5b67d3770edbd6243caf8">pbirc::irc::IRCMessage</a>
+</li>
 <li>connect()
-: <a class="el" href="classpbirc_1_1irc_1_1_i_r_c_bot.html#ae67dd37df2ced55ce22d5bc31fa523d6">pbirc::irc::IRCBot</a>
-, <a class="el" href="classpbirc_1_1irc_1_1_t_c_p_connection.html#a8a58102bd8a326cd4b3fcea042be0f8b">pbirc::irc::TCPConnection</a>
-, <a class="el" href="classpbirc_1_1irc_1_1_pandora_i_r_c_bot.html#a870dcafac0fdf40f0f76ce966f6b8420">pbirc::irc::PandoraIRCBot</a>
+: <a class="el" href="classpbirc_1_1irc_1_1_pandora_i_r_c_bot.html#a870dcafac0fdf40f0f76ce966f6b8420">pbirc::irc::PandoraIRCBot</a>
 , <a class="el" href="classpbirc_1_1irc_1_1_i_r_c_connection.html#a4c68c6b68da634e7ff7046ba23f2a8bd">pbirc::irc::IRCConnection</a>
+, <a class="el" href="classpbirc_1_1irc_1_1_i_r_c_bot.html#ae67dd37df2ced55ce22d5bc31fa523d6">pbirc::irc::IRCBot</a>
+, <a class="el" href="classpbirc_1_1irc_1_1_t_c_p_connection.html#a8a58102bd8a326cd4b3fcea042be0f8b">pbirc::irc::TCPConnection</a>
 </li>
 </ul>
 
 
 <h3><a class="anchor" id="index_d"></a>- d -</h3><ul>
+<li>data()
+: <a class="el" href="classpbirc_1_1irc_1_1_i_r_c_message.html#ac3db7969125f1fd468fc23f60782af8e">pbirc::irc::IRCMessage</a>
+</li>
 <li>disconnect()
-: <a class="el" href="classpbirc_1_1irc_1_1_i_r_c_bot.html#ad077548c11faf88f7e0d978bca336de5">pbirc::irc::IRCBot</a>
-, <a class="el" href="classpbirc_1_1irc_1_1_t_c_p_connection.html#acf4902705ebf52af309185281f859027">pbirc::irc::TCPConnection</a>
+: <a class="el" href="classpbirc_1_1irc_1_1_t_c_p_connection.html#acf4902705ebf52af309185281f859027">pbirc::irc::TCPConnection</a>
 , <a class="el" href="classpbirc_1_1irc_1_1_pandora_i_r_c_bot.html#ad3524570ab3578f3ff0e5cbf85ef9684">pbirc::irc::PandoraIRCBot</a>
 , <a class="el" href="classpbirc_1_1irc_1_1_i_r_c_connection.html#a3840ca142082256dea510aa5bb51d947">pbirc::irc::IRCConnection</a>
+, <a class="el" href="classpbirc_1_1irc_1_1_i_r_c_bot.html#ad077548c11faf88f7e0d978bca336de5">pbirc::irc::IRCBot</a>
 </li>
 </ul>
 
@@ -108,11 +140,24 @@
 
 
 <h3><a class="anchor" id="index_g"></a>- g -</h3><ul>
+<li>getChannel()
+: <a class="el" href="classpbirc_1_1irc_1_1_pandora_i_r_c_bot.html#a699ad31c2e8848ea90409dc22e3d95fe">pbirc::irc::PandoraIRCBot</a>
+</li>
 <li>getLocalPort()
 : <a class="el" href="classpbirc_1_1irc_1_1_t_c_p_connection.html#ae36b4540507435dee548068426d844f6">pbirc::irc::TCPConnection</a>
 </li>
+<li>getNick()
+: <a class="el" href="classpbirc_1_1irc_1_1_pandora_i_r_c_bot.html#a6954f5ef7562fdf2e01dddcbee730da9">pbirc::irc::PandoraIRCBot</a>
+</li>
+<li>getPort()
+: <a class="el" href="classpbirc_1_1irc_1_1_i_r_c_connection.html#aff43fc995b5989e0c797717b7bcdb6f4">pbirc::irc::IRCConnection</a>
+, <a class="el" href="classpbirc_1_1irc_1_1_pandora_i_r_c_bot.html#a1a56ff775572cd9ad04823de66254bf1">pbirc::irc::PandoraIRCBot</a>
+</li>
 <li>getRemotePort()
 : <a class="el" href="classpbirc_1_1irc_1_1_t_c_p_connection.html#a8ac6bc88c40f1f33d842c8f1ad706a08">pbirc::irc::TCPConnection</a>
+</li>
+<li>getServer()
+: <a class="el" href="classpbirc_1_1irc_1_1_pandora_i_r_c_bot.html#a4e814d008678a1d9f39e04ea2afa7d9c">pbirc::irc::PandoraIRCBot</a>
 </li>
 <li>getServerName()
 : <a class="el" href="classpbirc_1_1irc_1_1_i_r_c_connection.html#a7b09688e5d937d125ce2eb0548e647c9">pbirc::irc::IRCConnection</a>
@@ -134,8 +179,8 @@
 
 
 <h3><a class="anchor" id="index_o"></a>- o -</h3><ul>
-<li>onDEFAULT()
-: <a class="el" href="classpbirc_1_1irc_1_1_pandora_i_r_c_bot.html#ae016fd261d28597bf475023738249c14">pbirc::irc::PandoraIRCBot</a>
+<li>onALL()
+: <a class="el" href="classpbirc_1_1irc_1_1_pandora_i_r_c_bot.html#ad966e7bfc4476e4df9f879cc51497434">pbirc::irc::PandoraIRCBot</a>
 </li>
 <li>onPART()
 : <a class="el" href="classpbirc_1_1irc_1_1_pandora_i_r_c_bot.html#aa3717d6b72b3051327576b1a112123bb">pbirc::irc::PandoraIRCBot</a>
@@ -152,18 +197,19 @@
 </li>
 <li>operator&lt;&lt;()
 : <a class="el" href="classpbirc_1_1irc_1_1_i_r_c_message.html#a74903ed4f294f24b67ec80b1201d7ce8">pbirc::irc::IRCMessage</a>
-, <a class="el" href="classpbirc_1_1irc_1_1_t_c_p_connection.html#afca3b7e1cb08c4d0fb39b39273f14b7c">pbirc::irc::TCPConnection</a>
+, <a class="el" href="classpbirc_1_1irc_1_1_t_c_p_connection.html#af81fad8d0556b2038984774c81906285">pbirc::irc::TCPConnection</a>
 </li>
 <li>operator=()
-: <a class="el" href="classpbirc_1_1irc_1_1_i_r_c_message.html#af61ee4d2cf51032c0225544ecfcf76cc">pbirc::irc::IRCMessage</a>
+: <a class="el" href="classpbirc_1_1irc_1_1_i_r_c_connection.html#accde7a3be3d4cb7d2567402acc0a0a5e">pbirc::irc::IRCConnection</a>
 , <a class="el" href="classpbirc_1_1irc_1_1_pandora_i_r_c_bot.html#aa334a095b7ed0d8997406a8564836b76">pbirc::irc::PandoraIRCBot</a>
-, <a class="el" href="classpbirc_1_1irc_1_1_i_r_c_connection.html#accde7a3be3d4cb7d2567402acc0a0a5e">pbirc::irc::IRCConnection</a>
+, <a class="el" href="classpbirc_1_1irc_1_1_i_r_c_message.html#af4d3f7617d3947698e455592a5488b16">pbirc::irc::IRCMessage</a>
+, <a class="el" href="classpbirc_1_1irc_1_1_t_c_p_connection.html#ab73bda05597c5f7134e05974c429489f">pbirc::irc::TCPConnection</a>
 </li>
 <li>operator==()
 : <a class="el" href="classpbirc_1_1irc_1_1_i_r_c_message.html#afcfb232552b5c21247c6508a9e9a0a7e">pbirc::irc::IRCMessage</a>
 </li>
 <li>operator&gt;&gt;()
-: <a class="el" href="classpbirc_1_1irc_1_1_t_c_p_connection.html#a815a92b6437af82d26f4d5145168d2b5">pbirc::irc::TCPConnection</a>
+: <a class="el" href="classpbirc_1_1irc_1_1_t_c_p_connection.html#a371dbbc1a58083c65486f76f97e8e5c2">pbirc::irc::TCPConnection</a>
 </li>
 </ul>
 
@@ -173,7 +219,10 @@
 : <a class="el" href="classpbirc_1_1cb_1_1_pandora_bot.html#aa1bc3532bfa298d91e2532f9abd23a75">pbirc::cb::PandoraBot</a>
 </li>
 <li>PandoraIRCBot()
-: <a class="el" href="classpbirc_1_1irc_1_1_pandora_i_r_c_bot.html#ae4fe2a3d69b5cc8aa4e0aa4e4e96474b">pbirc::irc::PandoraIRCBot</a>
+: <a class="el" href="classpbirc_1_1irc_1_1_pandora_i_r_c_bot.html#ac7b9f84ccaafa79450c3ed39923cf355">pbirc::irc::PandoraIRCBot</a>
+</li>
+<li>params()
+: <a class="el" href="classpbirc_1_1irc_1_1_i_r_c_message.html#a278706fbd06ea3f652e0009d48b4068d">pbirc::irc::IRCMessage</a>
 </li>
 </ul>
 
@@ -196,6 +245,33 @@
 <li>send()
 : <a class="el" href="classpbirc_1_1irc_1_1_i_r_c_connection.html#a3cc2b07f380b50d0c1133fec3273f05b">pbirc::irc::IRCConnection</a>
 </li>
+<li>sender()
+: <a class="el" href="classpbirc_1_1irc_1_1_i_r_c_message.html#a5dca72c3e3b8bde5e722eadb7501ca5c">pbirc::irc::IRCMessage</a>
+</li>
+<li>setChannel()
+: <a class="el" href="classpbirc_1_1irc_1_1_pandora_i_r_c_bot.html#a434e529687a0168b943e8be3c5a4cd99">pbirc::irc::PandoraIRCBot</a>
+</li>
+<li>setCommand()
+: <a class="el" href="classpbirc_1_1irc_1_1_i_r_c_message.html#aaa7b53addc323d8cea23090af98e0788">pbirc::irc::IRCMessage</a>
+</li>
+<li>setData()
+: <a class="el" href="classpbirc_1_1irc_1_1_i_r_c_message.html#a425344e02203e4b86893bffe73421401">pbirc::irc::IRCMessage</a>
+</li>
+<li>setNick()
+: <a class="el" href="classpbirc_1_1irc_1_1_pandora_i_r_c_bot.html#a3a37cd501985be28da97f9b49dcf88ab">pbirc::irc::PandoraIRCBot</a>
+</li>
+<li>setParams()
+: <a class="el" href="classpbirc_1_1irc_1_1_i_r_c_message.html#aa974b46f5436db05a56f8003d9e85796">pbirc::irc::IRCMessage</a>
+</li>
+<li>setPort()
+: <a class="el" href="classpbirc_1_1irc_1_1_pandora_i_r_c_bot.html#a5c8b037445a8f54bfd89ad0a47b5a674">pbirc::irc::PandoraIRCBot</a>
+</li>
+<li>setSender()
+: <a class="el" href="classpbirc_1_1irc_1_1_i_r_c_message.html#a0fd335667c5c899fa6497916f6eb0d32">pbirc::irc::IRCMessage</a>
+</li>
+<li>setServer()
+: <a class="el" href="classpbirc_1_1irc_1_1_pandora_i_r_c_bot.html#a2a0e21726674dc1e2120ef8c48ec9c07">pbirc::irc::PandoraIRCBot</a>
+</li>
 </ul>
 
 
@@ -204,7 +280,8 @@
 : <a class="el" href="classpbirc_1_1irc_1_1_t_c_p_connection.html#a0d5fa5e2ddf77a572e3e9d8985274eb5">pbirc::irc::TCPConnection</a>
 </li>
 <li>think()
-: <a class="el" href="classpbirc_1_1cb_1_1_pandora_bot.html#ae512f403a1ded076968fa4f71321dadc">pbirc::cb::PandoraBot</a>
+: <a class="el" href="classpbirc_1_1cb_1_1_chatter_bot.html#a41248e338d35d2cb1d41ceebbe32f88a">pbirc::cb::ChatterBot</a>
+, <a class="el" href="classpbirc_1_1cb_1_1_pandora_bot.html#ae512f403a1ded076968fa4f71321dadc">pbirc::cb::PandoraBot</a>
 </li>
 </ul>
 
@@ -217,6 +294,9 @@
 
 
 <h3><a class="anchor" id="index_0x7e"></a>- ~ -</h3><ul>
+<li>~ChatterBot()
+: <a class="el" href="classpbirc_1_1cb_1_1_chatter_bot.html#a76f94029a6b497d00c1c7285b355f9a1">pbirc::cb::ChatterBot</a>
+</li>
 <li>~IRCBot()
 : <a class="el" href="classpbirc_1_1irc_1_1_i_r_c_bot.html#a405d4f588e2161699b51eeea41b5540c">pbirc::irc::IRCBot</a>
 </li>
@@ -234,11 +314,14 @@
 </li>
 </ul>
 </div><!-- contents -->
+</div><!-- doc-content -->
 <!-- start footer part -->
-<hr class="footer"/><address class="footer"><small>
-Generated on Sun Jul 14 2013 16:03:52 for PandoraBotIRC by &#160;<a href="http://www.doxygen.org/index.html">
-<img class="footer" src="doxygen.png" alt="doxygen"/>
-</a> 1.8.4
-</small></address>
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="footer">Generated on Mon Jul 15 2013 14:50:09 for PandoraBotIRC by
+    <a href="http://www.doxygen.org/index.html">
+    <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.4 </li>
+  </ul>
+</div>
 </body>
 </html>
