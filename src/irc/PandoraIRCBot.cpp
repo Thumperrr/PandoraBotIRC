@@ -61,10 +61,12 @@ namespace pbirc { namespace irc {
         else if(msg.data().find("!BotTalk") != std::string::npos) //start conversation with user
         {
             m_conversations.insert(conversations_t::value_type(msg.sender(), cb::PandoraBot(botid_default)));
+            privmsg(msg.params(), "Hello there!");
         }
         else if(msg.data().find("!BotStop") != std::string::npos)
         {
             m_conversations.erase(msg.sender());
+            privmsg(msg.params(), "Fine, I was done talking to you anyway.");
         }
         else if(msg.data().find("!BotHelp") != std::string::npos)
         {
