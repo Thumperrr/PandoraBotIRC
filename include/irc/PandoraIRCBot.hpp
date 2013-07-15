@@ -28,7 +28,7 @@ namespace pbirc { namespace irc {
 class PandoraIRCBot : public IRCBot
 {
     typedef std::map<std::string, cb::PandoraBot> conversations_t;
-    const std::string botid_default{"b0dafd24ee35a477"};
+    const std::string botid_default{"831d7b032e345b1f"};
 
     std::string m_server, m_nick, m_channel;
     std::uint16_t m_port;
