@@ -8,7 +8,7 @@ To be entered in the cplusplus.com monthly [community competition](http://cppcom
 - [x] Respond to channel messages with chatter bot replies
 - [x] Use server/port/nick/channel from command line arguments (not hard coded)
 - [x] Keep track of who is talking to the bot -- Be able to run multiple conversations at once.
-- [ ] Implement !BotID command -- Change the PandoraBot you're talking to
+- [x] Implement !BotID command -- Change the PandoraBot you're talking to
 - [x] Implement !BotQuit command -- Exit gracefully
 - [x] Implement !BotHalt command -- Temporarily stop the bot from replying to anything to keep the channel quiet. Puts the bot in an idle state.
 - [x] Implement !BotResume command -- Resumes the bot after !BotHalt has been called.

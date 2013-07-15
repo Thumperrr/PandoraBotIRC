@@ -75,8 +75,22 @@ namespace pbirc { namespace irc {
             privmsg(msg.params(), "!BotResume -- Resumes the bot after !BotHalt has been called.");
             privmsg(msg.params(), "!BotTalk -- Start a conversation with the bot! The bot will start responding to things you type.");
             privmsg(msg.params(), "!BotStop -- Stop the bot from talking to you.");
+            privmsg(msg.params(), "!BotID <bot_id> -- Changes the bot you are talking to. ID's can be retrieved from www.pandorabots.com");
             privmsg(msg.params(), "!BotHelp -- Display this message.");
         
+        }
+        else if(msg.data().find("!BotID") != std::string::npos)
+        {
+            //botid's are 16 characters in length
+            std::string botid = msg.data().substr(msg.data().find("!BotID")+7, 16);
+            std::cout << "Changed botid: " << botid << std::endl;
+
+            auto i = m_conversations.find(msg.sender());
+            if(i != m_conversations.end())
+            {
+                m_conversations.erase(msg.sender());
+                m_conversations.insert(conversations_t::value_type(msg.sender(), cb::PandoraBot(botid)));
+            }
         }
         else
         {
