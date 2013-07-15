@@ -19,9 +19,9 @@ CPPFLAGS += -O2
 endif
 CPPFLAGS += $(INCLUDE)
 
-
 VPATH=src:src/util/:src/chatterbot/:src/irc/
-TARGET=pbirc.bin
+TARGET_LOC=bin/$(CFG)
+TARGET=$(TARGET_LOC)/pbirc
 
 SRC = \
     main.cpp \
@@ -32,8 +32,8 @@ SRC = \
     IRCConnection.cpp \
     PandoraIRCBot.cpp
 
-OBJ = $(patsubst %.cpp, objs.$(CFG)/%.o, ${SRC})
-DEP = $(patsubst %.cpp, deps.$(CFG)/%.d, ${SRC})
+OBJ = $(patsubst %.cpp, $(TARGET_LOC)/objs/%.o, ${SRC})
+DEP = $(patsubst %.cpp, $(TARGET_LOC)/deps/%.d, ${SRC})
 
 all: ${TARGET}
 
@@ -46,21 +46,17 @@ test:
 	echo $(DEP)
 
 
-deps.$(CFG)/%.d: %.cpp
+$(TARGET_LOC)/deps/%.d: %.cpp
 	mkdir -p $(dir $@)
 	$(CPP) -MM -MP $(CPPFLAGS) $< | perl -pe 's#^(.*\.o)#deps.$(CFG)/$$1 objs.$(CFG)/$$1#' > $@
 
-objs.$(CFG)/%.o: %.cpp
+$(TARGET_LOC)/objs/%.o: %.cpp
 	mkdir -p $(dir $@)
 	$(CPP) -c $(CPPFLAGS) $< -o $@
 
-.PHONY: clean deps
-
+.PHONY: clean
 clean:
-	-rm -r objs.debug deps.debug ${TARGET}
-	-rm -r objs.release deps.release 
-
-
+	-rm -rf bin
 
 # Unless "make clean" is called, include the dependency files
 # which are auto-generated. Don't fail if they are missing

@@ -1,3 +1,2 @@
-deps.*/
-objs.*/
-*.bin
+bin/
+docs/html/
