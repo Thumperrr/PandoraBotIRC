@@ -7,8 +7,7 @@ To be entered in the cplusplus.com monthly [community competition](http://cppcom
 ####Planned features
 - [x] Respond to channel messages with chatter bot replies
 - [x] Use server/port/nick/channel from command line arguments (not hard coded)
-- [ ] Connect to multiple channels
-- [ ] Speak only when spoken to
+- [ ] Connect to multiple channels (OPTIONAL)
 - [x] Keep track of who is talking to the bot -- Be able to run multiple conversations at once.
 - [ ] Implement !BotID command -- Change the PandoraBot you're talking to
 - [x] Implement !BotQuit command -- Exit gracefully
