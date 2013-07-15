@@ -20,8 +20,9 @@ To be entered in the cplusplus.com monthly [community competition](http://cppcom
 Building
 ========
 ####OS x 10.8+
-Clone the git repository, and run `make` from the terminal. 
-Execute `pbirc.bin` to run the bot. 
+- [Clone](https://github.com/Thumperrr/PandoraBotIRC/archive/master.zip) the git repository.
+- Run `make` from the terminal where you saved the repo.
+- `pbirc` is the bot executable.
 
 ####Other
 You're on your own for now.
@@ -34,3 +35,33 @@ SFML and boost must be built and installed in the default place on os x (/usr/lo
 
 - Requires clang 3.3, which should be installed with the Apple Command Line Tools which you can get from the Apple developer web page.
     If not, you can install it via MacPorts. 
+
+Usage
+=====
+####Command Line
+PandoraBotIRC is designed to be a command line tool. 
+Four parameters must be supplied to `pbirc` when ran; server, port, nick, channel.
+Example:
+
+    ./pbirc irc.freenode.net 6667 pandoraBot, cplusplus
+
+will start the bot on irc.freenode.net, port 6667, with nick "pandoraBot" in the channel "#cplusplus". 
+
+####Talking to the bot
+In an IRC chat, to begin a conversation with the bot, type the !BotTalk command.\n
+The bot should greet you.\n
+Now, anything you type the bot will consider directed toward it, and will respond promptly.\n
+To stop a conversation with the bot, type !BotStop.
+
+The bot is capable of having conversations with multiple users at the same time. Using !BotTalk will not interfere with another users's conversation.
+
+####Other Commands
+- Typing "!BotQuit" will terminate the bot. 
+- Typing "!BotHalt" will put the bot in an idle state, temporarily suspending it from responding to anyone. 
+- Typing "!BotResume" will reverse the effects of !BotHalt
+- Typing "!BotID <ID>" will change the bot you are talking to to the bot specified by the parameter ID. This command only works if you have already started a conversation with the bot by typing !BotTalk. For more on BotIDs, see the [PandoraBot](classpbirc_1_1cb_1_1_pandora_bot.html#details) reference.
+- Typing "!BotHelp" will tell you all of the commands the bot handles.
+
+TODO:
+=====
+Licensing
