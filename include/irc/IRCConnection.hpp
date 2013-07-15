@@ -31,7 +31,7 @@ namespace pbirc { namespace irc {
  *  This funcitonality is entirely optional.
  *  You can use IRCConnection without using it's callback feature. 
  *  
- *  There are two built in special types of callback keys that aren't IRC commands.
+ *  There are two built in special callback keys that aren't IRC commands.
  *  1.) "ALL" -- Callbacks registered with this key are executed for every command.
  *  2.) "DEFAULT" -- Callbacks registered with this key are executed if no other callbacks exist for the command.
  */

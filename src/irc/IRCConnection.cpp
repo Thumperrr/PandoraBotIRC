@@ -61,6 +61,14 @@ namespace pbirc { namespace irc {
         if(msg.empty())
             return;
 
+        //Execute "ALL" callbacks first.
+        auto all_range = m_callback_map.equal_range("ALL");
+        if(all_range.first != all_range.second)
+        {
+            for(auto i = all_range.first; i != all_range.second; ++i)
+                i->second(msg);
+        }
+
         //find range of callbacks for this command
         auto range = m_callback_map.equal_range(msg.command());
         if(range.first != range.second) //at least one callback was found
