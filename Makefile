@@ -57,6 +57,11 @@ $(TARGET_LOC)/objs/%.o: %.cpp
 .PHONY: clean
 clean:
 	-rm -rf bin
+	-rm -rf docs/Doxygen_Docs
+
+.PHONY: docs
+docs:
+	cd docs ; doxygen
 
 # Unless "make clean" is called, include the dependency files
 # which are auto-generated. Don't fail if they are missing
