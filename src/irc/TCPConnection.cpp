@@ -42,7 +42,8 @@ namespace pbirc { namespace irc {
 
     TCPConnection &TCPConnection::operator<<(std::string const &rhs)
     {
-        m_status = (m_socket.send(rhs.c_str(), rhs.size()) != sf::Socket::Status::Disconnected);
+        auto status = m_socket.send(rhs.c_str(), rhs.size());
+        m_status = (status != sf::Socket::Status::Disconnected && status != sf::Socket::Status::Error);
 
         //something went wrong, disconnect.
         if(!m_status) m_socket.disconnect();
@@ -55,7 +56,8 @@ namespace pbirc { namespace irc {
         std::array<char, receive_buff_sz> buffer;
         std::size_t bytes_recvd;
 
-        m_status = (m_socket.receive(&buffer.front(), receive_buff_sz, bytes_recvd) != sf::Socket::Status::Disconnected);
+        auto status = m_socket.receive(&buffer.front(), receive_buff_sz, bytes_recvd);
+        m_status = (status != sf::Socket::Status::Disconnected && status != sf::Socket::Status::Error);
 
         if(m_status) //all is good
             rhs = std::string(buffer.begin(), bytes_recvd);
