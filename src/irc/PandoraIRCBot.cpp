@@ -66,6 +66,17 @@ namespace pbirc { namespace irc {
         {
             m_conversations.erase(msg.sender());
         }
+        else if(msg.data().find("!BotHelp") != std::string::npos)
+        {
+            m_session.send(IRCMessage("", "PRIVMSG", msg.params(), "PandoraBotIRC: An irc bot that acts as a Pandora chatter bot."));
+            m_session.send(IRCMessage("", "PRIVMSG", msg.params(), "Command list:"));
+            m_session.send(IRCMessage("", "PRIVMSG", msg.params(), "!BotQuit -- Shuts the bot down."));
+            m_session.send(IRCMessage("", "PRIVMSG", msg.params(), "!BotHalt -- Puts the bot in an idle state. Continues running but doesn't reply to anyone."));
+            m_session.send(IRCMessage("", "PRIVMSG", msg.params(), "!BotResume -- Resumes the bot after !BotHalt has been called."));
+            m_session.send(IRCMessage("", "PRIVMSG", msg.params(), "!BotTalk -- Start a conversation with the bot! The bot will start responding to things you type."));
+            m_session.send(IRCMessage("", "PRIVMSG", msg.params(), "!BotStop -- Stop the bot from talking to you."));
+            m_session.send(IRCMessage("", "PRIVMSG", msg.params(), "!BotHelp -- Display this message."));
+        }
         else
         {
             if(!m_halt)
