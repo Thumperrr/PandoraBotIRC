@@ -24,6 +24,10 @@ namespace pbirc { namespace irc {
  * @brief Class representing a Pandora IRC bot. 
  * @details his bot will connect to an IRC server
  * and respond to users as a Pandora chatterbot.
+ * 
+ * @section Example Usage
+ * Refer to the following snippet from main.cpp:
+ * @snippet main.cpp PandoraIRCBot usage
  */
 class PandoraIRCBot : public IRCBot
 {

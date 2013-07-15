@@ -89,47 +89,47 @@ $(document).ready(function(){initNavTree('_t_c_p_connection_8hpp_source.html',''
 <div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;</div>
 <div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="keyword">namespace </span>pbirc { <span class="keyword">namespace </span>irc {</div>
 <div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;</div>
-<div class="line"><a name="l00023"></a><span class="lineno"><a class="code" href="classpbirc_1_1irc_1_1_t_c_p_connection.html">   23</a></span>&#160;<span class="keyword">class </span><a class="code" href="classpbirc_1_1irc_1_1_t_c_p_connection.html" title="TCPConnection encapsulates a tcp connection with SFML sockets. ">TCPConnection</a></div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;{</div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;    <span class="comment">//maximum amount of data received at once. </span></div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;    <span class="keyword">static</span> <span class="keyword">const</span> <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> receive_buff_sz = 256;</div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;</div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;    sf::TcpSocket m_socket;</div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;    <span class="keywordtype">bool</span>          m_status; </div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;</div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;<span class="keyword">public</span>:</div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;    <a class="code" href="classpbirc_1_1irc_1_1_t_c_p_connection.html#a0d5fa5e2ddf77a572e3e9d8985274eb5" title="Default constructor. ">TCPConnection</a>();</div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;</div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;    <a class="code" href="classpbirc_1_1irc_1_1_t_c_p_connection.html#aa241b5754b7773bbc3d50ff5a64f126e" title="Default destructor. ">~TCPConnection</a>() = <span class="keywordflow">default</span>;</div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;</div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;    <span class="comment">//Copying of tcp connections is disabled</span></div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;    <a class="code" href="classpbirc_1_1irc_1_1_t_c_p_connection.html#a0d5fa5e2ddf77a572e3e9d8985274eb5" title="Default constructor. ">TCPConnection</a>(<a class="code" href="classpbirc_1_1irc_1_1_t_c_p_connection.html" title="TCPConnection encapsulates a tcp connection with SFML sockets. ">TCPConnection</a> <span class="keyword">const</span> &amp;) = <span class="keyword">delete</span>;</div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;    <a class="code" href="classpbirc_1_1irc_1_1_t_c_p_connection.html" title="TCPConnection encapsulates a tcp connection with SFML sockets. ">TCPConnection</a> &amp;<a class="code" href="classpbirc_1_1irc_1_1_t_c_p_connection.html#ab73bda05597c5f7134e05974c429489f">operator=</a>(<a class="code" href="classpbirc_1_1irc_1_1_t_c_p_connection.html" title="TCPConnection encapsulates a tcp connection with SFML sockets. ">TCPConnection</a> <span class="keyword">const</span> &amp;);</div>
+<div class="line"><a name="l00027"></a><span class="lineno"><a class="code" href="classpbirc_1_1irc_1_1_t_c_p_connection.html">   27</a></span>&#160;<span class="keyword">class </span><a class="code" href="classpbirc_1_1irc_1_1_t_c_p_connection.html" title="TCPConnection encapsulates a tcp connection with SFML sockets. ">TCPConnection</a></div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;{</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;    <span class="comment">//maximum amount of data received at once. </span></div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;    <span class="keyword">static</span> <span class="keyword">const</span> <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> receive_buff_sz = 256;</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;    sf::TcpSocket m_socket;</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;    <span class="keywordtype">bool</span>          m_status; </div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;    <a class="code" href="classpbirc_1_1irc_1_1_t_c_p_connection.html#a0d5fa5e2ddf77a572e3e9d8985274eb5" title="Default constructor. ">TCPConnection</a>();</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;    <a class="code" href="classpbirc_1_1irc_1_1_t_c_p_connection.html#aa241b5754b7773bbc3d50ff5a64f126e" title="Default destructor. ">~TCPConnection</a>() = <span class="keywordflow">default</span>;</div>
 <div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;</div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;    <span class="keywordtype">bool</span> <a class="code" href="classpbirc_1_1irc_1_1_t_c_p_connection.html#a8a58102bd8a326cd4b3fcea042be0f8b" title="Starts up the tcp connection. ">connect</a>(std::string <span class="keyword">const</span> &amp;server_name, std::uint16_t <span class="keyword">const</span> &amp;port);</div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;</div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classpbirc_1_1irc_1_1_t_c_p_connection.html#acf4902705ebf52af309185281f859027" title="Disconnects the tcp connection. ">disconnect</a>();</div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;</div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;    std::uint16_t <a class="code" href="classpbirc_1_1irc_1_1_t_c_p_connection.html#ae36b4540507435dee548068426d844f6" title="Get the port to which the socket is bound locally. ">getLocalPort</a>();</div>
-<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;</div>
-<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;    std::uint16_t <a class="code" href="classpbirc_1_1irc_1_1_t_c_p_connection.html#a8ac6bc88c40f1f33d842c8f1ad706a08" title="Get the port of the connected peer to which the socket is connected. ">getRemotePort</a>();</div>
-<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;</div>
-<div class="line"><a name="l00083"></a><span class="lineno"><a class="code" href="classpbirc_1_1irc_1_1_t_c_p_connection.html#ac4a33dbcc33e62ef15920e139039a848">   83</a></span>&#160;    <span class="keyword">operator</span> bool() { <span class="keywordflow">return</span> m_status; }</div>
-<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;</div>
-<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;    <a class="code" href="classpbirc_1_1irc_1_1_t_c_p_connection.html" title="TCPConnection encapsulates a tcp connection with SFML sockets. ">TCPConnection</a> &amp;<a class="code" href="classpbirc_1_1irc_1_1_t_c_p_connection.html#af81fad8d0556b2038984774c81906285" title="operator &lt;&lt; overload. ">operator&lt;&lt;</a>(std::string <span class="keyword">const</span> &amp;rhs);</div>
-<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;</div>
-<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;    <a class="code" href="classpbirc_1_1irc_1_1_t_c_p_connection.html" title="TCPConnection encapsulates a tcp connection with SFML sockets. ">TCPConnection</a> &amp;<a class="code" href="classpbirc_1_1irc_1_1_t_c_p_connection.html#a371dbbc1a58083c65486f76f97e8e5c2" title="operator &gt;&gt; overload. ">operator&gt;&gt;</a>(std::string       &amp;rhs);</div>
-<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;};</div>
-<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;</div>
-<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;}}</div>
-<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;    <span class="comment">//Copying of tcp connections is disabled</span></div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;    <a class="code" href="classpbirc_1_1irc_1_1_t_c_p_connection.html#a0d5fa5e2ddf77a572e3e9d8985274eb5" title="Default constructor. ">TCPConnection</a>(<a class="code" href="classpbirc_1_1irc_1_1_t_c_p_connection.html" title="TCPConnection encapsulates a tcp connection with SFML sockets. ">TCPConnection</a> <span class="keyword">const</span> &amp;) = <span class="keyword">delete</span>;</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;    <a class="code" href="classpbirc_1_1irc_1_1_t_c_p_connection.html" title="TCPConnection encapsulates a tcp connection with SFML sockets. ">TCPConnection</a> &amp;<a class="code" href="classpbirc_1_1irc_1_1_t_c_p_connection.html#ab73bda05597c5f7134e05974c429489f">operator=</a>(<a class="code" href="classpbirc_1_1irc_1_1_t_c_p_connection.html" title="TCPConnection encapsulates a tcp connection with SFML sockets. ">TCPConnection</a> <span class="keyword">const</span> &amp;);</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;    <span class="keywordtype">bool</span> <a class="code" href="classpbirc_1_1irc_1_1_t_c_p_connection.html#a8a58102bd8a326cd4b3fcea042be0f8b" title="Starts up the tcp connection. ">connect</a>(std::string <span class="keyword">const</span> &amp;server_name, std::uint16_t <span class="keyword">const</span> &amp;port);</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classpbirc_1_1irc_1_1_t_c_p_connection.html#acf4902705ebf52af309185281f859027" title="Disconnects the tcp connection. ">disconnect</a>();</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;    std::uint16_t <a class="code" href="classpbirc_1_1irc_1_1_t_c_p_connection.html#ae36b4540507435dee548068426d844f6" title="Get the port to which the socket is bound locally. ">getLocalPort</a>();</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;</div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;    std::uint16_t <a class="code" href="classpbirc_1_1irc_1_1_t_c_p_connection.html#a8ac6bc88c40f1f33d842c8f1ad706a08" title="Get the port of the connected peer to which the socket is connected. ">getRemotePort</a>();</div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;</div>
+<div class="line"><a name="l00087"></a><span class="lineno"><a class="code" href="classpbirc_1_1irc_1_1_t_c_p_connection.html#ac4a33dbcc33e62ef15920e139039a848">   87</a></span>&#160;    <span class="keyword">operator</span> bool() { <span class="keywordflow">return</span> m_status; }</div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;</div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;    <a class="code" href="classpbirc_1_1irc_1_1_t_c_p_connection.html" title="TCPConnection encapsulates a tcp connection with SFML sockets. ">TCPConnection</a> &amp;<a class="code" href="classpbirc_1_1irc_1_1_t_c_p_connection.html#af81fad8d0556b2038984774c81906285" title="operator &lt;&lt; overload. ">operator&lt;&lt;</a>(std::string <span class="keyword">const</span> &amp;rhs);</div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;</div>
+<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;    <a class="code" href="classpbirc_1_1irc_1_1_t_c_p_connection.html" title="TCPConnection encapsulates a tcp connection with SFML sockets. ">TCPConnection</a> &amp;<a class="code" href="classpbirc_1_1irc_1_1_t_c_p_connection.html#a371dbbc1a58083c65486f76f97e8e5c2" title="operator &gt;&gt; overload. ">operator&gt;&gt;</a>(std::string       &amp;rhs);</div>
+<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;};</div>
+<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;</div>
+<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;}}</div>
+<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;<span class="preprocessor">#endif</span></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="dir_99afdd53072331c398eb332b8104222c.html">PandoraBotIRC</a></li><li class="navelem"><a class="el" href="dir_cd8d7787147611518db42da0b7dacd3e.html">include</a></li><li class="navelem"><a class="el" href="dir_18a5f4ba53c4eaed8b62717091289ebd.html">irc</a></li><li class="navelem"><a class="el" href="_t_c_p_connection_8hpp.html">TCPConnection.hpp</a></li>
-    <li class="footer">Generated on Sun Jul 14 2013 19:05:13 for PandoraBotIRC by
+    <li class="footer">Generated on Mon Jul 15 2013 15:00:41 for PandoraBotIRC by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.4 </li>
   </ul>

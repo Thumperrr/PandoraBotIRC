@@ -1,0 +1,5 @@
+ :rajaniemi.freenode.net NOTICE * :*** Looking up your hostname...
+ :rajaniemi.freenode.net NOTICE * :*** Checking Ident
+ :rajaniemi.freenode.net NOTICE * :*** Found your hostname
+ :rajaniemi.freenode.net NOTICE * :*** No Ident response
+ ERROR :Closing Link: 127.0.0.1 (Connection timed out)

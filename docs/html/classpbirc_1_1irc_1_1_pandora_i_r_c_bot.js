@@ -10,7 +10,7 @@ var classpbirc_1_1irc_1_1_pandora_i_r_c_bot =
     [ "getNick", "classpbirc_1_1irc_1_1_pandora_i_r_c_bot.html#a6954f5ef7562fdf2e01dddcbee730da9", null ],
     [ "getPort", "classpbirc_1_1irc_1_1_pandora_i_r_c_bot.html#a1a56ff775572cd9ad04823de66254bf1", null ],
     [ "getServer", "classpbirc_1_1irc_1_1_pandora_i_r_c_bot.html#a4e814d008678a1d9f39e04ea2afa7d9c", null ],
-    [ "onDEFAULT", "classpbirc_1_1irc_1_1_pandora_i_r_c_bot.html#ae016fd261d28597bf475023738249c14", null ],
+    [ "onALL", "classpbirc_1_1irc_1_1_pandora_i_r_c_bot.html#ad966e7bfc4476e4df9f879cc51497434", null ],
     [ "onPART", "classpbirc_1_1irc_1_1_pandora_i_r_c_bot.html#aa3717d6b72b3051327576b1a112123bb", null ],
     [ "onPING", "classpbirc_1_1irc_1_1_pandora_i_r_c_bot.html#af678805a3fad73e7ba3dd4c6f7bb88f9", null ],
     [ "onPRIVMSG", "classpbirc_1_1irc_1_1_pandora_i_r_c_bot.html#ae017ffd13586ec75815c300cde180b47", null ],

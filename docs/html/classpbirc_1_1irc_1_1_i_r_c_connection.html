@@ -128,10 +128,61 @@ Public Member Functions</h2></td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p><a class="el" href="classpbirc_1_1irc_1_1_i_r_c_connection.html" title="IRCConnection class represents a connection to an irc server. ">IRCConnection</a> class represents a connection to an irc server. </p>
-<p>This class can register callback functions to call when a certain command is received. Call <a class="el" href="classpbirc_1_1irc_1_1_i_r_c_connection.html#ad818df80e539f2d14bea43a21b5b55bd" title="This is the main worker function when using callback functionality. ">IRCConnection::work</a> on every event loop of the program. <a class="el" href="classpbirc_1_1irc_1_1_i_r_c_connection.html" title="IRCConnection class represents a connection to an irc server. ">IRCConnection</a> will receive incoming messages, process them, and call corresponding callback functions.</p>
+<p>This class can register callback functions to call when a certain command is received.<br/>
+ Call <a class="el" href="classpbirc_1_1irc_1_1_i_r_c_connection.html#ad818df80e539f2d14bea43a21b5b55bd" title="This is the main worker function when using callback functionality. ">IRCConnection::work</a> on every event loop of the program.<br/>
+ <a class="el" href="classpbirc_1_1irc_1_1_i_r_c_connection.html" title="IRCConnection class represents a connection to an irc server. ">IRCConnection</a> will receive incoming messages, process them, and call corresponding callback functions.</p>
 <p>callback functions return type void, and have one parameter of type <a class="el" href="classpbirc_1_1irc_1_1_i_r_c_message.html" title="IRCMessage class represents an IRC message that corresponds with irc protocol. ">IRCMessage</a> const &amp;.</p>
-<p>This funcitonality is entirely optional. You can use <a class="el" href="classpbirc_1_1irc_1_1_i_r_c_connection.html" title="IRCConnection class represents a connection to an irc server. ">IRCConnection</a> without using it's callback feature. </p>
-</div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<p>This funcitonality is entirely optional. You can use <a class="el" href="classpbirc_1_1irc_1_1_i_r_c_connection.html" title="IRCConnection class represents a connection to an irc server. ">IRCConnection</a> without using it's callback feature.</p>
+<p>There are two built in special callback keys that aren't IRC commands.<br/>
+ 1.) "ALL" &ndash; Callbacks registered with this key are executed for every command.<br/>
+ 2.) "DEFAULT" &ndash; Callbacks registered with this key are executed if no other callbacks exist for the command.<br/>
+</p>
+<h1><a class="anchor" id="IRCConnection"></a>
+Example</h1>
+<div class="fragment"><div class="line"><span class="preprocessor">#include &quot;<a class="code" href="_i_r_c_connection_8hpp.html">irc/IRCConnection.hpp</a>&quot;</span></div>
+<div class="line"><span class="preprocessor">#include &quot;<a class="code" href="_i_r_c_message_8hpp.html">irc/IRCMessage.hpp</a>&quot;</span></div>
+<div class="line"></div>
+<div class="line"><span class="keyword">using</span> <a class="code" href="classpbirc_1_1irc_1_1_i_r_c_message.html" title="IRCMessage class represents an IRC message that corresponds with irc protocol. ">pbirc::irc::IRCMessage</a>;</div>
+<div class="line"></div>
+<div class="line"><span class="keywordtype">void</span> <a class="code" href="_i_r_c_connection__example_8cpp.html#aa90119bd3dd4d204acca42414f05ff3f">onNotice</a>(IRCMessage <span class="keyword">const</span> &amp;msg)</div>
+<div class="line">{</div>
+<div class="line">    std::cout &lt;&lt; <span class="stringliteral">&quot;Notice: &quot;</span> &lt;&lt; msg.data() &lt;&lt; std::endl;</div>
+<div class="line">}</div>
+<div class="line"><span class="keywordtype">void</span> <a class="code" href="_i_r_c_connection__example_8cpp.html#a853e1efe2bb8ca9e2e03590d083f5ff0">onDefault</a>(IRCMessage <span class="keyword">const</span> &amp;msg)</div>
+<div class="line">{</div>
+<div class="line">    std::cout &lt;&lt; <span class="stringliteral">&quot;DEFAULT: &quot;</span> &lt;&lt; msg.data() &lt;&lt; std::endl;</div>
+<div class="line">}</div>
+<div class="line"></div>
+<div class="line"><span class="keywordtype">int</span> <a class="code" href="_i_r_c_connection__example_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4">main</a>()</div>
+<div class="line">{</div>
+<div class="line">    <a class="code" href="classpbirc_1_1irc_1_1_i_r_c_connection.html" title="IRCConnection class represents a connection to an irc server. ">pbirc::irc::IRCConnection</a> irc;</div>
+<div class="line">    <span class="keywordflow">if</span>(!irc.<a class="code" href="classpbirc_1_1irc_1_1_i_r_c_connection.html#a4c68c6b68da634e7ff7046ba23f2a8bd" title="Starts up a connection with an irc server. ">connect</a>(<span class="stringliteral">&quot;irc.freenode.net&quot;</span>, 6667))</div>
+<div class="line">    {</div>
+<div class="line">        std::cout &lt;&lt; <span class="stringliteral">&quot;Error connecting.&quot;</span> &lt;&lt; std::endl;</div>
+<div class="line">        <span class="keywordflow">return</span> -1;</div>
+<div class="line">    }</div>
+<div class="line"></div>
+<div class="line">    <span class="comment">//register callbacks</span></div>
+<div class="line">    irc.<a class="code" href="classpbirc_1_1irc_1_1_i_r_c_connection.html#afb33eb7b8c7b3498dff8205b3aff0694" title="Adds a callback function that is a member function of another object. ">addCallback</a>(<span class="stringliteral">&quot;NOTICE&quot;</span>, &amp;<a class="code" href="_i_r_c_connection__example_8cpp.html#aa90119bd3dd4d204acca42414f05ff3f">onNotice</a>);</div>
+<div class="line">    irc.<a class="code" href="classpbirc_1_1irc_1_1_i_r_c_connection.html#afb33eb7b8c7b3498dff8205b3aff0694" title="Adds a callback function that is a member function of another object. ">addCallback</a>(<span class="stringliteral">&quot;DEFAULT&quot;</span>, &amp;<a class="code" href="_i_r_c_connection__example_8cpp.html#a853e1efe2bb8ca9e2e03590d083f5ff0">onDefault</a>);</div>
+<div class="line"></div>
+<div class="line">    <span class="comment">// If the callback is a member function, addCallback requires a pointer to the object.</span></div>
+<div class="line">    <span class="comment">// Ex: addCallback(&quot;NOTICE&quot;, &amp;ObjectName::onNotice, ptrToObject);</span></div>
+<div class="line">    <span class="comment">//     ptrToObject is usually the this pointer.</span></div>
+<div class="line">    <span class="keywordflow">while</span>(irc)</div>
+<div class="line">    {</div>
+<div class="line">        irc.<a class="code" href="classpbirc_1_1irc_1_1_i_r_c_connection.html#ad818df80e539f2d14bea43a21b5b55bd" title="This is the main worker function when using callback functionality. ">work</a>();</div>
+<div class="line">    }</div>
+<div class="line"></div>
+<div class="line">    <span class="keywordflow">return</span> 0;</div>
+<div class="line">}</div>
+</div><!-- fragment --><p> Possible output for the above code: </p>
+<pre class="fragment">NOTICE: *** Looking up your hostname...
+NOTICE: *** Checking Ident
+NOTICE: *** Found your hostname
+NOTICE: *** No Ident response
+DEFAULT: Closing Link: 127.0.0.1 (Connection timed out)
+</pre> </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a class="anchor" id="a024810e9d81c54c3e2cc22feeef8e6b2"></a>
 <div class="memitem">
 <div class="memproto">
@@ -524,7 +575,7 @@ template&lt;typename Func &gt; </div>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="namespacepbirc.html">pbirc</a></li><li class="navelem"><a class="el" href="namespacepbirc_1_1irc.html">irc</a></li><li class="navelem"><a class="el" href="classpbirc_1_1irc_1_1_i_r_c_connection.html">IRCConnection</a></li>
-    <li class="footer">Generated on Sun Jul 14 2013 19:05:13 for PandoraBotIRC by
+    <li class="footer">Generated on Mon Jul 15 2013 15:00:41 for PandoraBotIRC by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.4 </li>
   </ul>

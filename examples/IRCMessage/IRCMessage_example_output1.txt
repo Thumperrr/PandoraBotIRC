@@ -1,0 +1,4 @@
+Sender: Thumperrr!~Thumperrr@ip184-180-235-145.mc.at.cox.net
+Command: PRIVMSG
+Params: #chessplusplus
+Data: I wonder if I could use them to parse IRC commands

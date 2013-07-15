@@ -19,6 +19,10 @@ namespace pbirc { namespace irc {
 
 /**
  * @brief TCPConnection encapsulates a tcp connection with SFML sockets
+ * @section TCPConnection_ex1 Example Usage
+ * @include TCPConnection/TCPConnection_example.cpp
+ * Possible output for the above example:
+ * @verbinclude TCPConnection/TCPConnection_example_output.txt
  */
 class TCPConnection
 {

@@ -33,10 +33,13 @@ int main(int argc, char *argv[])
         printUsage(std::cout);
         return -1;
     }
+
+    //!< [PandoraIRCBot usage]
     pbirc::irc::PandoraIRCBot bot(argv[1],
                                   boost::lexical_cast<int>(argv[2]), 
                                   argv[3], 
                                   "#" + std::string(argv[4]));
 
     return bot.run();
+    //!< [PandoraIRCBot usage]
 }

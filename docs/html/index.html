@@ -69,14 +69,15 @@ $(document).ready(function(){initNavTree('index.html','');});
 <ul>
 <li>[x] Respond to channel messages with chatter bot replies</li>
 <li>[x] Use server/port/nick/channel from command line arguments (not hard coded)</li>
-<li>[ ] Connect to multiple channels</li>
-<li>[ ] Speak only when spoken to</li>
-<li>[ ] Keep track of who is talking to the bot &ndash; Be able to run multiple conversations at once.</li>
-<li>[ ] Implement !BotID command &ndash; Change the PandoraBot you're talking to</li>
+<li>[x] Keep track of who is talking to the bot &ndash; Be able to run multiple conversations at once.</li>
+<li>[x] Implement !BotID command &ndash; Change the PandoraBot you're talking to</li>
 <li>[x] Implement !BotQuit command &ndash; Exit gracefully</li>
-<li>[x] Implement !BotHalt command &ndash; Temporarily stop the bot from replying to anything to keep the channel quiet</li>
+<li>[x] Implement !BotHalt command &ndash; Temporarily stop the bot from replying to anything to keep the channel quiet. Puts the bot in an idle state.</li>
 <li>[x] Implement !BotResume command &ndash; Resumes the bot after !BotHalt has been called.</li>
-<li>[ ] Implement !BotHelp command &ndash; Sends a list of all possible commands</li>
+<li>[x] Implement !BotTalk command &ndash; Starts a conversation between a user and the bot. The bot will ignore a user until they have typed !BotTalk, then it will start talking to them.</li>
+<li>[x] Implement !BotStop command &ndash; Stops a conversation between the user and the bot.</li>
+<li>[x] Implement !BotHelp command &ndash; Sends a list of all possible commands</li>
+<li>[ ] Connect to multiple channels (OPTIONAL)</li>
 </ul>
 <h1>Building </h1>
 <h4>OS x 10.8+</h4>
@@ -97,7 +98,7 @@ $(document).ready(function(){initNavTree('index.html','');});
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="footer">Generated on Sun Jul 14 2013 19:05:13 for PandoraBotIRC by
+    <li class="footer">Generated on Mon Jul 15 2013 15:00:41 for PandoraBotIRC by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.4 </li>
   </ul>

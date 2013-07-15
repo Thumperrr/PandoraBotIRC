@@ -16,6 +16,17 @@ namespace pbirc { namespace cb {
 /**
  * @brief Class representing a connection to a PandoraBot chatterbot.
  * @details Call PandoraBot::think with a message, and it will return a reply. 
+ *
+ * @section pandorabot_ex1 Example Usage
+ * @include PandoraBot/PandoraBot_example.cpp
+ *
+ * @section pandorabot_ex2 A word on BotIDs
+ * Bot IDs are found from www.pandorabots.com
+ * You can browse through bots on that website (there are many.)
+ * When you find a bot you want to use, click on it, and the botid will be in the url.
+ * 
+ * BotIDs are 16 characters in length.
+ * Using an incorrect BotID will result in undefined behavior. 
  */
 class PandoraBot : public ChatterBot
 {

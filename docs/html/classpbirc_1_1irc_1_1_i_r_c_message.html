@@ -153,8 +153,26 @@ Related Functions</h2></td></tr>
 <div class="textblock"><p><a class="el" href="classpbirc_1_1irc_1_1_i_r_c_message.html" title="IRCMessage class represents an IRC message that corresponds with irc protocol. ">IRCMessage</a> class represents an IRC message that corresponds with irc protocol. </p>
 <p>IRC messages come in the form of ":&lt;sender&gt; &lt;command&gt; &lt;params&gt; :&lt;data&gt;\r\n" there may be multiple params, and data can be of any length. Sender, params, and data are optional fields.</p>
 <p><a class="el" href="classpbirc_1_1irc_1_1_i_r_c_message.html" title="IRCMessage class represents an IRC message that corresponds with irc protocol. ">IRCMessage</a> may be constructed by raw IRC messages received from a server. This method will throw std::invalid_argument if the string supplied does not match the format of an IRC message.</p>
-<p>A more detailed description of <a class="el" href="classpbirc_1_1irc_1_1_i_r_c_message.html" title="IRCMessage class represents an IRC message that corresponds with irc protocol. ">IRCMessage</a> can be found at <a href="https://gist.github.com/Thumperrr/e35f7b45e116624b5bae">https://gist.github.com/Thumperrr/e35f7b45e116624b5bae</a> </p>
-</div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<p>You can construct IRCMessages two ways. You can initialize it with a raw irc message Or you can initialize it with parameters.</p>
+<h1><a class="anchor" id="Example"></a>
+Usage</h1>
+<h2><a class="anchor" id="ircmessage_ex1"></a>
+Raw IRC message initialized</h2>
+<div class="fragment"><div class="line">    <span class="comment">//Construct an IRCMessage from a raw irc message.</span></div>
+<div class="line">    std::string message = <span class="stringliteral">&quot;:Thumperrr!~Thumperrr@ip184-180-235-145.mc.at.cox.net PRIVMSG #chessplusplus :I wonder if I could use them to parse IRC commands\r\n&quot;</span>;</div>
+<div class="line">    std::cout &lt;&lt; <a class="code" href="classpbirc_1_1irc_1_1_i_r_c_message.html#ab260acb72a730384c2bc5c422e7859bc" title="Default constructor. ">IRCMessage</a>(message) &lt;&lt; std::endl;</div>
+</div><!-- fragment --><p>The above code should output: </p>
+<pre class="fragment">Sender: Thumperrr!~Thumperrr@ip184-180-235-145.mc.at.cox.net
+Command: PRIVMSG
+Params: #chessplusplus
+Data: I wonder if I could use them to parse IRC commands
+</pre><h2><a class="anchor" id="ircmessage_ex2"></a>
+Parameter Initialized</h2>
+<div class="fragment"><div class="line">    <span class="comment">//Parameter initialize an IRCMessage</span></div>
+<div class="line">    std::cout &lt;&lt; <a class="code" href="classpbirc_1_1irc_1_1_i_r_c_message.html#ab260acb72a730384c2bc5c422e7859bc" title="Default constructor. ">IRCMessage</a>(<span class="stringliteral">&quot;Me&quot;</span>, <span class="stringliteral">&quot;PRIVMSG&quot;</span>, <span class="stringliteral">&quot;#thisChannel&quot;</span>, <span class="stringliteral">&quot;IRCMessage is an awesome class.&quot;</span>) &lt;&lt; std::endl;</div>
+</div><!-- fragment --><p>The above code should output: </p>
+<pre class="fragment">:Me PRIVMSG #thisChannel :IRCMessage is an awesome class. 
+</pre> </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a class="anchor" id="ab260acb72a730384c2bc5c422e7859bc"></a>
 <div class="memitem">
 <div class="memproto">
@@ -278,7 +296,12 @@ Related Functions</h2></td></tr>
 
 <p>Constructor (2) - Raw message initialized. </p>
 <p>This constructor takes a raw message received from an irc server and fills out the object accordingly.</p>
-<p>This constructor will throw std::invalid_argument if raw does not match the format of an irc message.</p>
+<dl class="exception"><dt>Exceptions</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname">std::invalid_argument</td><td>if 'raw' does not match the syntax of an irc message.</td></tr>
+  </table>
+  </dd>
+</dl>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">raw</td><td>string that contains the raw irc protocol message </td></tr>
@@ -686,11 +709,11 @@ template&lt;typename... Params&gt; </div>
 
 <p>Global std::ostream operator&lt;&lt; overload for IRCMessages. </p>
 <p>Outputs the IRC message in the following format: </p>
-<div class="fragment"><div class="line">Sender: </div>
-<div class="line">Command:</div>
-<div class="line">Params:</div>
-<div class="line">Data:</div>
-</div><!-- fragment --> 
+<pre class="fragment">Sender: 
+Command:
+Params:
+Data:
+</pre> 
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following files:<ul>
@@ -703,7 +726,7 @@ template&lt;typename... Params&gt; </div>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="namespacepbirc.html">pbirc</a></li><li class="navelem"><a class="el" href="namespacepbirc_1_1irc.html">irc</a></li><li class="navelem"><a class="el" href="classpbirc_1_1irc_1_1_i_r_c_message.html">IRCMessage</a></li>
-    <li class="footer">Generated on Sun Jul 14 2013 19:05:13 for PandoraBotIRC by
+    <li class="footer">Generated on Mon Jul 15 2013 15:00:41 for PandoraBotIRC by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.4 </li>
   </ul>

@@ -85,30 +85,30 @@ $(document).ready(function(){initNavTree('_pandora_bot_8hpp_source.html','');});
 <div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;</div>
 <div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="keyword">namespace </span>pbirc { <span class="keyword">namespace </span>cb {</div>
 <div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;    </div>
-<div class="line"><a name="l00020"></a><span class="lineno"><a class="code" href="classpbirc_1_1cb_1_1_pandora_bot.html">   20</a></span>&#160;    <span class="keyword">class </span><a class="code" href="classpbirc_1_1cb_1_1_pandora_bot.html" title="Class representing a connection to a PandoraBot chatterbot. ">PandoraBot</a> : <span class="keyword">public</span> <a class="code" href="classpbirc_1_1cb_1_1_chatter_bot.html" title="Abstract base class representing a chatterbot. ">ChatterBot</a></div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;    {</div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;        std::string m_botid, m_custid;</div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;        </div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;    <span class="keyword">public</span>:</div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;        <a class="code" href="classpbirc_1_1cb_1_1_pandora_bot.html#aa1bc3532bfa298d91e2532f9abd23a75" title="Default ctor deleted. Must provide a botid for PandoraBot to function. ">PandoraBot</a>() = <span class="keyword">delete</span>;</div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;        </div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;        <a class="code" href="classpbirc_1_1cb_1_1_pandora_bot.html#aa1bc3532bfa298d91e2532f9abd23a75" title="Default ctor deleted. Must provide a botid for PandoraBot to function. ">PandoraBot</a>(std::string <span class="keyword">const</span> &amp;botid);</div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;        </div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;        std::string <a class="code" href="classpbirc_1_1cb_1_1_pandora_bot.html#ae512f403a1ded076968fa4f71321dadc" title="Function for talking with the Pandora Bot. ">think</a>(std::string <span class="keyword">const</span> &amp;msg);</div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;        </div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;    <span class="keyword">private</span>:</div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;        std::string process_input(std::string <span class="keyword">const</span> &amp;s);</div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;    };</div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;    </div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;}}</div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00031"></a><span class="lineno"><a class="code" href="classpbirc_1_1cb_1_1_pandora_bot.html">   31</a></span>&#160;<span class="keyword">class </span><a class="code" href="classpbirc_1_1cb_1_1_pandora_bot.html" title="Class representing a connection to a PandoraBot chatterbot. ">PandoraBot</a> : <span class="keyword">public</span> <a class="code" href="classpbirc_1_1cb_1_1_chatter_bot.html" title="Abstract base class representing a chatterbot. ">ChatterBot</a></div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;{</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;    std::string m_botid, m_custid;</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;    </div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;    <a class="code" href="classpbirc_1_1cb_1_1_pandora_bot.html#aa1bc3532bfa298d91e2532f9abd23a75" title="Default ctor deleted. Must provide a botid for PandoraBot to function. ">PandoraBot</a>() = <span class="keyword">delete</span>;</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;    </div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;    <a class="code" href="classpbirc_1_1cb_1_1_pandora_bot.html#aa1bc3532bfa298d91e2532f9abd23a75" title="Default ctor deleted. Must provide a botid for PandoraBot to function. ">PandoraBot</a>(std::string <span class="keyword">const</span> &amp;botid);</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;    </div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;    std::string <a class="code" href="classpbirc_1_1cb_1_1_pandora_bot.html#ae512f403a1ded076968fa4f71321dadc" title="Function for talking with the Pandora Bot. ">think</a>(std::string <span class="keyword">const</span> &amp;msg);</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;    </div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;<span class="keyword">private</span>:</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;    std::string process_input(std::string <span class="keyword">const</span> &amp;s);</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;};</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;    </div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;}}</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;<span class="preprocessor">#endif</span></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="dir_99afdd53072331c398eb332b8104222c.html">PandoraBotIRC</a></li><li class="navelem"><a class="el" href="dir_cd8d7787147611518db42da0b7dacd3e.html">include</a></li><li class="navelem"><a class="el" href="dir_19ad2dc76ea68d92ed9faf36188a0e31.html">chatterbot</a></li><li class="navelem"><a class="el" href="_pandora_bot_8hpp.html">PandoraBot.hpp</a></li>
-    <li class="footer">Generated on Sun Jul 14 2013 19:05:13 for PandoraBotIRC by
+    <li class="footer">Generated on Mon Jul 15 2013 15:00:41 for PandoraBotIRC by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.4 </li>
   </ul>

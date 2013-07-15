@@ -1,0 +1,5 @@
+NOTICE: *** Looking up your hostname...
+NOTICE: *** Checking Ident
+NOTICE: *** Found your hostname
+NOTICE: *** No Ident response
+DEFAULT: Closing Link: 127.0.0.1 (Connection timed out)

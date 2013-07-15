@@ -1,6 +1,7 @@
 var NAVTREE =
 [
   [ "PandoraBotIRC", "index.html", [
+    [ "PandoraBotIRC", "md___users__steve__git_hub__pandora_bot_i_r_c__r_e_a_d_m_e.html", null ],
     [ "Bug List", "bug.html", null ],
     [ "Namespaces", null, [
       [ "Namespace List", "namespaces.html", "namespaces" ],

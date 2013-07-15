@@ -26,8 +26,19 @@ namespace pbirc { namespace irc {
  *  This method will throw std::invalid_argument if the string supplied does not match
  *  the format of an IRC message.
  *
- *  A more detailed description of IRCMessage can be found at
- *  https://gist.github.com/Thumperrr/e35f7b45e116624b5bae
+ * You can construct IRCMessages two ways. You can initialize it with a raw irc message
+ * Or you can initialize it with parameters.
+ *
+ * @section Example
+ * @subsection ircmessage_ex1 Raw IRC message initialized
+ * @snippet IRCMessage/IRCMessage_example.cpp example1
+ * The above code should output:
+ * @verbinclude IRCMessage/IRCMessage_example_output1.txt
+ *
+ * @subsection ircmessage_ex2 Parameter Initialized
+ * @snippet IRCMessage/IRCMessage_example.cpp example2
+ * The above code should output:
+ * @verbinclude IRCMessage/IRCMessage_example_output2.txt
  */
 class IRCMessage
 {
@@ -58,9 +69,8 @@ public:
      * @details This constructor takes a raw message received from an irc server
      * and fills out the object accordingly.
      * 
-     * This constructor will throw std::invalid_argument if raw does not
-     * match the format of an irc message.
-     * 
+     * @throws std::invalid_argument if 'raw' does not match the syntax of an irc message.
+     *
      * @param[in] raw string that contains the raw irc protocol message
      */
     explicit IRCMessage(std::string const &raw);
@@ -132,12 +142,12 @@ private:
  * @brief Global std::ostream operator<< overload for IRCMessages
  * @details
  *  Outputs the IRC message in the following format:
- * @code
- *  Sender: 
- *  Command:
- *  Params:
- *  Data:
- * @endcode
+ * @verbatim
+   Sender: 
+   Command:
+   Params:
+   Data:
+   @endverbatim
  */
 std::ostream &operator<<(std::ostream &os, IRCMessage const &rhs);
 

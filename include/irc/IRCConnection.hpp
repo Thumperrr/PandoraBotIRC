@@ -21,8 +21,8 @@ namespace pbirc { namespace irc {
  * @brief IRCConnection class represents a connection to an irc server.
  * 
  * @details This class can register callback functions to call when a certain
- *  command is received. 
- *  Call IRCConnection::work on every event loop of the program.
+ *  command is received.\n
+ *  Call IRCConnection::work on every event loop of the program.\n
  *  IRCConnection will receive incoming messages, process them, and 
  *  call corresponding callback functions.
  *
@@ -31,9 +31,14 @@ namespace pbirc { namespace irc {
  *  This funcitonality is entirely optional.
  *  You can use IRCConnection without using it's callback feature. 
  *  
- *  There are two built in special callback keys that aren't IRC commands.
- *  1.) "ALL" -- Callbacks registered with this key are executed for every command.
- *  2.) "DEFAULT" -- Callbacks registered with this key are executed if no other callbacks exist for the command.
+ *  There are two built in special callback keys that aren't IRC commands.\n
+ *  1.) "ALL" -- Callbacks registered with this key are executed for every command.\n
+ *  2.) "DEFAULT" -- Callbacks registered with this key are executed if no other callbacks exist for the command.\n
+ *
+ * @section IRCConnection Example
+ * @include IRCConnection/IRCConnection_example.cpp
+ * Possible output for the above code:
+ * @verbinclude IRCConnection/IRCConnection_example_output.txt
  */
 class IRCConnection
 {
