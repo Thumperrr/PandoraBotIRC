@@ -115,10 +115,10 @@ public: //CALLBACKS DEFINED HERE
     void onPART(IRCMessage const &msg);
     
     /**
-     * @brief Default callback. Handles all other messages.
+     * @brief ALL callback. All messages go through this function.
      * @details Currently outputs them in the terminal.
      */
-    void onDEFAULT(IRCMessage const &msg);
+    void onALL(IRCMessage const &msg);
 
 private:
     /**

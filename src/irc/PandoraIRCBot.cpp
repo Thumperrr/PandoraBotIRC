@@ -97,7 +97,7 @@ namespace pbirc { namespace irc {
         m_session.send(IRCMessage("", "PONG", "", msg.data()));
     }
 
-    void PandoraIRCBot::onDEFAULT(IRCMessage const &msg)
+    void PandoraIRCBot::onALL(IRCMessage const &msg)
     {
         std::cout << msg.raw();
     }
@@ -107,7 +107,7 @@ namespace pbirc { namespace irc {
         m_halt = false;
         m_session.addCallback("PRIVMSG", &PandoraIRCBot::onPRIVMSG, this);
         m_session.addCallback("PING",    &PandoraIRCBot::onPING,    this);
-        m_session.addCallback("DEFAULT", &PandoraIRCBot::onDEFAULT, this);
+        m_session.addCallback("ALL",     &PandoraIRCBot::onALL,     this);
     }
 
     void PandoraIRCBot::privmsg(std::string const &channel, std::string const &msg)
