@@ -4,6 +4,8 @@ PandoraBotIRC {#mainpage}
 An IRC bot that acts as a Pandora chatter bot. 
 To be entered in the cplusplus.com monthly [community competition](http://cppcomp.netne.net/showthread.php?tid=4)
 
+[Click here](https://github.com/Thumperrr/PandoraBotIRC) to view the project's GitHub repository.
+
 ####Planned features
 - [x] Respond to channel messages with chatter bot replies
 - [x] Use server/port/nick/channel from command line arguments (not hard coded)
