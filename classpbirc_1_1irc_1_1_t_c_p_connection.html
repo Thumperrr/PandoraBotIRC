@@ -126,8 +126,8 @@ Example Usage</h1>
 <div class="line">{</div>
 <div class="line">    <span class="comment">//Example connects to irc.freenode.net on port 6667.</span></div>
 <div class="line">    <span class="comment">//Should be able to receive some data before the connection times out.</span></div>
-<div class="line">    <a class="code" href="classpbirc_1_1irc_1_1_t_c_p_connection.html" title="TCPConnection encapsulates a tcp connection with SFML sockets. ">pbirc::irc::TCPConnection</a> connection;</div>
-<div class="line">    <span class="keywordflow">if</span>(!connection.<a class="code" href="classpbirc_1_1irc_1_1_t_c_p_connection.html#a8a58102bd8a326cd4b3fcea042be0f8b" title="Starts up the tcp connection. ">connect</a>(<span class="stringliteral">&quot;irc.freenode.net&quot;</span>, 6667)</div>
+<div class="line">    <a class="code" href="classpbirc_1_1irc_1_1_t_c_p_connection.html">pbirc::irc::TCPConnection</a> connection;</div>
+<div class="line">    <span class="keywordflow">if</span>(!connection.<a class="code" href="classpbirc_1_1irc_1_1_t_c_p_connection.html#a8a58102bd8a326cd4b3fcea042be0f8b">connect</a>(<span class="stringliteral">&quot;irc.freenode.net&quot;</span>, 6667)</div>
 <div class="line">    {</div>
 <div class="line">        std::cout &lt;&lt; <span class="stringliteral">&quot;Error on connecting.&quot;</span> &lt;&lt; std::endl;</div>
 <div class="line">        <span class="keywordflow">return</span> -1;</div>
@@ -142,7 +142,6 @@ Example Usage</h1>
 <div class="line"></div>
 <div class="line">    <span class="keywordflow">return</span> 0;</div>
 <div class="line">}</div>
-<div class="line"></div>
 </div><!-- fragment --><p> Possible output for the above example: </p>
 <pre class="fragment"> :rajaniemi.freenode.net NOTICE * :*** Looking up your hostname...
  :rajaniemi.freenode.net NOTICE * :*** Checking Ident
@@ -157,7 +156,7 @@ Example Usage</h1>
         <tr>
           <td class="memname">pbirc::irc::TCPConnection::TCPConnection </td>
           <td>(</td>
-          <td class="paramname">)</td><td></td>
+          <td class="paramname"></td><td>)</td>
           <td></td>
         </tr>
       </table>
@@ -178,7 +177,7 @@ Example Usage</h1>
         <tr>
           <td class="memname">pbirc::irc::TCPConnection::~TCPConnection </td>
           <td>(</td>
-          <td class="paramname">)</td><td></td>
+          <td class="paramname"></td><td>)</td>
           <td></td>
         </tr>
       </table>
@@ -204,7 +203,7 @@ Example Usage</h1>
           <td class="memname">pbirc::irc::TCPConnection::TCPConnection </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="classpbirc_1_1irc_1_1_t_c_p_connection.html">TCPConnection</a> const &amp;&#160;</td>
-          <td class="paramname">)</td><td></td>
+          <td class="paramname"></td><td>)</td>
           <td></td>
         </tr>
       </table>
@@ -260,7 +259,7 @@ Example Usage</h1>
         <tr>
           <td class="memname">void pbirc::irc::TCPConnection::disconnect </td>
           <td>(</td>
-          <td class="paramname">)</td><td></td>
+          <td class="paramname"></td><td>)</td>
           <td></td>
         </tr>
       </table>
@@ -277,7 +276,7 @@ Example Usage</h1>
         <tr>
           <td class="memname">std::uint16_t pbirc::irc::TCPConnection::getLocalPort </td>
           <td>(</td>
-          <td class="paramname">)</td><td></td>
+          <td class="paramname"></td><td>)</td>
           <td></td>
         </tr>
       </table>
@@ -296,7 +295,7 @@ Example Usage</h1>
         <tr>
           <td class="memname">std::uint16_t pbirc::irc::TCPConnection::getRemotePort </td>
           <td>(</td>
-          <td class="paramname">)</td><td></td>
+          <td class="paramname"></td><td>)</td>
           <td></td>
         </tr>
       </table>
@@ -318,7 +317,7 @@ Example Usage</h1>
         <tr>
           <td class="memname">pbirc::irc::TCPConnection::operator bool </td>
           <td>(</td>
-          <td class="paramname">)</td><td></td>
+          <td class="paramname"></td><td>)</td>
           <td></td>
         </tr>
       </table>
@@ -342,7 +341,7 @@ Example Usage</h1>
           <td class="memname"><a class="el" href="classpbirc_1_1irc_1_1_t_c_p_connection.html">TCPConnection</a> &amp; pbirc::irc::TCPConnection::operator&lt;&lt; </td>
           <td>(</td>
           <td class="paramtype">std::string const &amp;&#160;</td>
-          <td class="paramname"><em>rhs</em>)</td><td></td>
+          <td class="paramname"><em>rhs</em></td><td>)</td>
           <td></td>
         </tr>
       </table>
@@ -362,7 +361,7 @@ Example Usage</h1>
           <td class="memname"><a class="el" href="classpbirc_1_1irc_1_1_t_c_p_connection.html">TCPConnection</a>&amp; pbirc::irc::TCPConnection::operator= </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="classpbirc_1_1irc_1_1_t_c_p_connection.html">TCPConnection</a> const &amp;&#160;</td>
-          <td class="paramname">)</td><td></td>
+          <td class="paramname"></td><td>)</td>
           <td></td>
         </tr>
       </table>
@@ -378,7 +377,7 @@ Example Usage</h1>
           <td class="memname"><a class="el" href="classpbirc_1_1irc_1_1_t_c_p_connection.html">TCPConnection</a> &amp; pbirc::irc::TCPConnection::operator&gt;&gt; </td>
           <td>(</td>
           <td class="paramtype">std::string &amp;&#160;</td>
-          <td class="paramname"><em>rhs</em>)</td><td></td>
+          <td class="paramname"><em>rhs</em></td><td>)</td>
           <td></td>
         </tr>
       </table>
@@ -400,7 +399,7 @@ Example Usage</h1>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="namespacepbirc.html">pbirc</a></li><li class="navelem"><a class="el" href="namespacepbirc_1_1irc.html">irc</a></li><li class="navelem"><a class="el" href="classpbirc_1_1irc_1_1_t_c_p_connection.html">TCPConnection</a></li>
-    <li class="footer">Generated on Mon Jul 15 2013 16:00:44 for PandoraBotIRC by
+    <li class="footer">Generated on Mon Jul 15 2013 22:57:47 for PandoraBotIRC by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.4 </li>
   </ul>

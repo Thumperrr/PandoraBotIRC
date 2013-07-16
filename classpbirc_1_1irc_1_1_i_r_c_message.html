@@ -160,7 +160,7 @@ Usage</h1>
 Raw IRC message initialized</h2>
 <div class="fragment"><div class="line">    <span class="comment">//Construct an IRCMessage from a raw irc message.</span></div>
 <div class="line">    std::string message = <span class="stringliteral">&quot;:Thumperrr!~Thumperrr@ip184-180-235-145.mc.at.cox.net PRIVMSG #chessplusplus :I wonder if I could use them to parse IRC commands\r\n&quot;</span>;</div>
-<div class="line">    std::cout &lt;&lt; <a class="code" href="classpbirc_1_1irc_1_1_i_r_c_message.html#ab260acb72a730384c2bc5c422e7859bc" title="Default constructor. ">IRCMessage</a>(message) &lt;&lt; std::endl;</div>
+<div class="line">    std::cout &lt;&lt; <a class="code" href="classpbirc_1_1irc_1_1_i_r_c_message.html#ab260acb72a730384c2bc5c422e7859bc">IRCMessage</a>(message) &lt;&lt; std::endl;</div>
 </div><!-- fragment --><p>The above code should output: </p>
 <pre class="fragment">Sender: Thumperrr!~Thumperrr@ip184-180-235-145.mc.at.cox.net
 Command: PRIVMSG
@@ -169,7 +169,7 @@ Data: I wonder if I could use them to parse IRC commands
 </pre><h2><a class="anchor" id="ircmessage_ex2"></a>
 Parameter Initialized</h2>
 <div class="fragment"><div class="line">    <span class="comment">//Parameter initialize an IRCMessage</span></div>
-<div class="line">    std::cout &lt;&lt; <a class="code" href="classpbirc_1_1irc_1_1_i_r_c_message.html#ab260acb72a730384c2bc5c422e7859bc" title="Default constructor. ">IRCMessage</a>(<span class="stringliteral">&quot;Me&quot;</span>, <span class="stringliteral">&quot;PRIVMSG&quot;</span>, <span class="stringliteral">&quot;#thisChannel&quot;</span>, <span class="stringliteral">&quot;IRCMessage is an awesome class.&quot;</span>) &lt;&lt; std::endl;</div>
+<div class="line">    std::cout &lt;&lt; <a class="code" href="classpbirc_1_1irc_1_1_i_r_c_message.html#ab260acb72a730384c2bc5c422e7859bc">IRCMessage</a>(<span class="stringliteral">&quot;Me&quot;</span>, <span class="stringliteral">&quot;PRIVMSG&quot;</span>, <span class="stringliteral">&quot;#thisChannel&quot;</span>, <span class="stringliteral">&quot;IRCMessage is an awesome class.&quot;</span>) &lt;&lt; std::endl;</div>
 </div><!-- fragment --><p>The above code should output: </p>
 <pre class="fragment">:Me PRIVMSG #thisChannel :IRCMessage is an awesome class. 
 </pre> </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
@@ -183,7 +183,7 @@ Parameter Initialized</h2>
         <tr>
           <td class="memname">pbirc::irc::IRCMessage::IRCMessage </td>
           <td>(</td>
-          <td class="paramname">)</td><td></td>
+          <td class="paramname"></td><td>)</td>
           <td></td>
         </tr>
       </table>
@@ -208,7 +208,7 @@ Parameter Initialized</h2>
         <tr>
           <td class="memname">pbirc::irc::IRCMessage::~IRCMessage </td>
           <td>(</td>
-          <td class="paramname">)</td><td></td>
+          <td class="paramname"></td><td>)</td>
           <td></td>
         </tr>
       </table>
@@ -283,7 +283,7 @@ Parameter Initialized</h2>
           <td class="memname">pbirc::irc::IRCMessage::IRCMessage </td>
           <td>(</td>
           <td class="paramtype">std::string const &amp;&#160;</td>
-          <td class="paramname"><em>raw</em>)</td><td></td>
+          <td class="paramname"><em>raw</em></td><td>)</td>
           <td></td>
         </tr>
       </table>
@@ -322,7 +322,7 @@ Parameter Initialized</h2>
           <td class="memname">pbirc::irc::IRCMessage::IRCMessage </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="classpbirc_1_1irc_1_1_i_r_c_message.html">IRCMessage</a> const &amp;&#160;</td>
-          <td class="paramname">)</td><td></td>
+          <td class="paramname"></td><td>)</td>
           <td></td>
         </tr>
       </table>
@@ -387,7 +387,7 @@ template&lt;typename... Params&gt; </div>
         <tr>
           <td class="memname">void pbirc::irc::IRCMessage::addParams </td>
           <td>(</td>
-          <td class="paramname">)</td><td></td>
+          <td class="paramname"></td><td>)</td>
           <td></td>
         </tr>
       </table>
@@ -412,7 +412,7 @@ template&lt;typename... Params&gt; </div>
         <tr>
           <td class="memname">std::string pbirc::irc::IRCMessage::command </td>
           <td>(</td>
-          <td class="paramname">)</td><td></td>
+          <td class="paramname"></td><td>)</td>
           <td> const</td>
         </tr>
       </table>
@@ -437,7 +437,7 @@ template&lt;typename... Params&gt; </div>
         <tr>
           <td class="memname">std::string pbirc::irc::IRCMessage::data </td>
           <td>(</td>
-          <td class="paramname">)</td><td></td>
+          <td class="paramname"></td><td>)</td>
           <td> const</td>
         </tr>
       </table>
@@ -459,7 +459,7 @@ template&lt;typename... Params&gt; </div>
         <tr>
           <td class="memname">bool pbirc::irc::IRCMessage::empty </td>
           <td>(</td>
-          <td class="paramname">)</td><td></td>
+          <td class="paramname"></td><td>)</td>
           <td> const</td>
         </tr>
       </table>
@@ -476,7 +476,7 @@ template&lt;typename... Params&gt; </div>
           <td class="memname"><a class="el" href="classpbirc_1_1irc_1_1_i_r_c_message.html">IRCMessage</a> &amp; pbirc::irc::IRCMessage::operator= </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="classpbirc_1_1irc_1_1_i_r_c_message.html">IRCMessage</a> const &amp;&#160;</td>
-          <td class="paramname"><em>rhs</em>)</td><td></td>
+          <td class="paramname"><em>rhs</em></td><td>)</td>
           <td></td>
         </tr>
       </table>
@@ -494,7 +494,7 @@ template&lt;typename... Params&gt; </div>
           <td class="memname">bool pbirc::irc::IRCMessage::operator== </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="classpbirc_1_1irc_1_1_i_r_c_message.html">IRCMessage</a> const &amp;&#160;</td>
-          <td class="paramname"><em>rhs</em>)</td><td></td>
+          <td class="paramname"><em>rhs</em></td><td>)</td>
           <td></td>
         </tr>
       </table>
@@ -514,7 +514,7 @@ template&lt;typename... Params&gt; </div>
         <tr>
           <td class="memname">std::string pbirc::irc::IRCMessage::params </td>
           <td>(</td>
-          <td class="paramname">)</td><td></td>
+          <td class="paramname"></td><td>)</td>
           <td> const</td>
         </tr>
       </table>
@@ -536,7 +536,7 @@ template&lt;typename... Params&gt; </div>
         <tr>
           <td class="memname">std::string pbirc::irc::IRCMessage::raw </td>
           <td>(</td>
-          <td class="paramname">)</td><td></td>
+          <td class="paramname"></td><td>)</td>
           <td> const</td>
         </tr>
       </table>
@@ -555,7 +555,7 @@ template&lt;typename... Params&gt; </div>
         <tr>
           <td class="memname">std::string pbirc::irc::IRCMessage::sender </td>
           <td>(</td>
-          <td class="paramname">)</td><td></td>
+          <td class="paramname"></td><td>)</td>
           <td> const</td>
         </tr>
       </table>
@@ -581,7 +581,7 @@ template&lt;typename... Params&gt; </div>
           <td class="memname">void pbirc::irc::IRCMessage::setCommand </td>
           <td>(</td>
           <td class="paramtype">std::string const &amp;&#160;</td>
-          <td class="paramname"><em>command</em>)</td><td></td>
+          <td class="paramname"><em>command</em></td><td>)</td>
           <td></td>
         </tr>
       </table>
@@ -607,7 +607,7 @@ template&lt;typename... Params&gt; </div>
           <td class="memname">void pbirc::irc::IRCMessage::setData </td>
           <td>(</td>
           <td class="paramtype">std::string const &amp;&#160;</td>
-          <td class="paramname"><em>data</em>)</td><td></td>
+          <td class="paramname"><em>data</em></td><td>)</td>
           <td></td>
         </tr>
       </table>
@@ -633,7 +633,7 @@ template&lt;typename... Params&gt; </div>
           <td class="memname">void pbirc::irc::IRCMessage::setParams </td>
           <td>(</td>
           <td class="paramtype">std::string const &amp;&#160;</td>
-          <td class="paramname"><em>params</em>)</td><td></td>
+          <td class="paramname"><em>params</em></td><td>)</td>
           <td></td>
         </tr>
       </table>
@@ -659,7 +659,7 @@ template&lt;typename... Params&gt; </div>
           <td class="memname">void pbirc::irc::IRCMessage::setSender </td>
           <td>(</td>
           <td class="paramtype">std::string const &amp;&#160;</td>
-          <td class="paramname"><em>sender</em>)</td><td></td>
+          <td class="paramname"><em>sender</em></td><td>)</td>
           <td></td>
         </tr>
       </table>
@@ -726,7 +726,7 @@ Data:
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="namespacepbirc.html">pbirc</a></li><li class="navelem"><a class="el" href="namespacepbirc_1_1irc.html">irc</a></li><li class="navelem"><a class="el" href="classpbirc_1_1irc_1_1_i_r_c_message.html">IRCMessage</a></li>
-    <li class="footer">Generated on Mon Jul 15 2013 16:00:44 for PandoraBotIRC by
+    <li class="footer">Generated on Mon Jul 15 2013 22:57:47 for PandoraBotIRC by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.4 </li>
   </ul>
