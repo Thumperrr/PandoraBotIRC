@@ -60,7 +60,7 @@ namespace pbirc { namespace irc {
         }
         else if(msg.data().find("!BotTalk") != std::string::npos) //start conversation with user
         {
-            m_conversations.insert(conversations_t::value_type(msg.sender(), cb::PandoraBot(botid_default)));
+            m_conversations.insert({msg.sender(), cb::PandoraBot(botid_default)});
             privmsg(msg.params(), "Hello there!");
         }
         else if(msg.data().find("!BotStop") != std::string::npos)
@@ -91,7 +91,7 @@ namespace pbirc { namespace irc {
             if(i != m_conversations.end())
             {
                 m_conversations.erase(msg.sender());
-                m_conversations.insert(conversations_t::value_type(msg.sender(), cb::PandoraBot(botid)));
+                m_conversations.insert({msg.sender(), cb::PandoraBot(botid)});
             }
         }
         else

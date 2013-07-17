@@ -137,7 +137,7 @@ public:
     template<typename Func, typename Obj>
     void addCallback(std::string const &cmd, Func function, Obj object)
     {
-        m_callback_map.insert(callback_map_t::value_type(cmd, std::bind(function, object, std::placeholders::_1)));
+        m_callback_map.insert({cmd, std::bind(function, object, std::placeholders::_1)});
     }
 
     /**
@@ -149,7 +149,7 @@ public:
     template<typename Func>
     void addCallback(std::string const &cmd, Func function)
     {
-        m_callback_map.insert(callback_map_t::value_type(cmd, std::bind(function, std::placeholders::_1)));
+        m_callback_map.insert({cmd, std::bind(function, std::placeholders::_1)});
     }
 
     /**
