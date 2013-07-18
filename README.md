@@ -35,10 +35,9 @@ You're on your own for now.
 - Requires SFML 2.0
 - Requires Boost 1.35.0 or greater.
 
-SFML and boost must be built and installed in the default place on os x (/usr/local/lib and /usr/local/include/)
+SFML must be built properly with the compiler you choose to build the project with.
 
-- Requires clang 3.3, which should be installed with the Apple Command Line Tools which you can get from the Apple developer web page.
-    If not, you can install it via MacPorts. 
+Boost must be in the default location on your system (somewhere CMake can find it -- /usr/local/lib or /opt/local/lib, etc.)
 
 Usage
 =====
