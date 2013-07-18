@@ -65,8 +65,12 @@ namespace pbirc { namespace irc {
         }
         else if(msg.data().find("!BotStop") != std::string::npos)
         {
-            m_conversations.erase(msg.sender());
-            privmsg(msg.params(), "Fine, I was done talking to you anyway.");
+            auto i = m_conversations.find(msg.sender());
+            if(i != m_conversations.end())
+            {
+                m_conversations.erase(msg.sender());
+                privmsg(msg.params(), "Fine, I was done talking to you anyway.");
+            }
         }
         else if(msg.data().find("!BotHelp") != std::string::npos)
         {
