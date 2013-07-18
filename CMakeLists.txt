@@ -2,9 +2,8 @@ cmake_minimum_required(VERSION 2.6)
 project(PandoraIRCBot)
 
 # Enable debug symbols by default
-if(CMAKE_BUILD_TYPE STREQUAL "")
-    set(CMAKE_BUILD_TYPE Debug)
-endif()
+set(BUILD_TYPE "Debug" CACHE STRING "Project build type")
+set(CMAKE_BUILD_TYPE ${BUILD_TYPE})
 
 # Add C++11 definitions
 set(CMAKE_CXX_FLAGS "-std=c++11 ${CMAKE_CXX_FLAGS}")
