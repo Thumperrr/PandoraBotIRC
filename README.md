@@ -20,9 +20,13 @@ To be entered in the cplusplus.com monthly [community competition](http://cppcom
 Building
 ========
 ####OS x 10.8+
-[Clone](https://github.com/Thumperrr/PandoraBotIRC/archive/master.zip) the git repository.
-Run `make` from the terminal where you saved the repo.
-`pbirc` is the bot executable.
+- [Clone](https://github.com/Thumperrr/PandoraBotIRC/archive/master.zip) the git repository.
+- Run the CMake GUI.
+- Enter the directory you cloned the repo to in the source code field.
+- Enter where you want to build the binaries (Usually in the same directory as the source code field)
+- Select configure, choose Unix Makefiles.\n(Note: At this point, you may select which compiler you want to use to build the project. You will have to have SFML built properly with the compiler you choose.)
+- Select Generate (assuming there have been no errors).
+- From the terminal in the directory you chose to build the binaries, run `make`. 
 
 ####Other
 You're on your own for now.
