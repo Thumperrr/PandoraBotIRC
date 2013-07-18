@@ -33,7 +33,7 @@ You're on your own for now.
 
 ####Dependencies
 - Requires SFML 2.0
-- Requires Boost 1.35.0 or greater.
+- Requires Boost 1.53.0 or greater.
 
 SFML must be built properly with the compiler you choose to build the project with.
 
