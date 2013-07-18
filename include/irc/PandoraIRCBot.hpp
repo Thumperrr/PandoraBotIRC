@@ -17,6 +17,7 @@
 #include <cstdint>
 #include <string>
 #include <map>
+#include <iostream>
 
 namespace pbirc { namespace irc {
 
