@@ -119,36 +119,8 @@ Public Member Functions</h2></td></tr>
 <div class="textblock"><p><a class="el" href="classpbirc_1_1irc_1_1_t_c_p_connection.html" title="TCPConnection encapsulates a tcp connection with SFML sockets. ">TCPConnection</a> encapsulates a tcp connection with SFML sockets. </p>
 <h1><a class="anchor" id="TCPConnection_ex1"></a>
 Example Usage</h1>
-<div class="fragment"><div class="line"><span class="preprocessor">#include &quot;<a class="code" href="_t_c_p_connection_8hpp.html">irc/TCPConnection.hpp</a>&quot;</span></div>
-<div class="line"><span class="preprocessor">#include &lt;iostream&gt;</span></div>
-<div class="line"></div>
-<div class="line"><span class="keywordtype">int</span> <a class="code" href="_i_r_c_connection__example_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4">main</a>()</div>
-<div class="line">{</div>
-<div class="line">    <span class="comment">//Example connects to irc.freenode.net on port 6667.</span></div>
-<div class="line">    <span class="comment">//Should be able to receive some data before the connection times out.</span></div>
-<div class="line">    <a class="code" href="classpbirc_1_1irc_1_1_t_c_p_connection.html">pbirc::irc::TCPConnection</a> connection;</div>
-<div class="line">    <span class="keywordflow">if</span>(!connection.<a class="code" href="classpbirc_1_1irc_1_1_t_c_p_connection.html#a8a58102bd8a326cd4b3fcea042be0f8b">connect</a>(<span class="stringliteral">&quot;irc.freenode.net&quot;</span>, 6667)</div>
-<div class="line">    {</div>
-<div class="line">        std::cout &lt;&lt; <span class="stringliteral">&quot;Error on connecting.&quot;</span> &lt;&lt; std::endl;</div>
-<div class="line">        <span class="keywordflow">return</span> -1;</div>
-<div class="line">    }</div>
-<div class="line"></div>
-<div class="line">    <span class="comment">//receive data until an error occurs or the socket is disconneted.</span></div>
-<div class="line">    std::string str;</div>
-<div class="line">    <span class="keywordflow">while</span>(connection &gt;&gt; str)</div>
-<div class="line">    {</div>
-<div class="line">        std::cout &lt;&lt; str;</div>
-<div class="line">    }</div>
-<div class="line"></div>
-<div class="line">    <span class="keywordflow">return</span> 0;</div>
-<div class="line">}</div>
-</div><!-- fragment --><p> Possible output for the above example: </p>
-<pre class="fragment"> :rajaniemi.freenode.net NOTICE * :*** Looking up your hostname...
- :rajaniemi.freenode.net NOTICE * :*** Checking Ident
- :rajaniemi.freenode.net NOTICE * :*** Found your hostname
- :rajaniemi.freenode.net NOTICE * :*** No Ident response
- ERROR :Closing Link: 127.0.0.1 (Connection timed out)
-</pre> </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<div class="fragment"></div><!-- fragment --><p> Possible output for the above example: </p>
+<pre class="fragment"></pre> </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a class="anchor" id="a0d5fa5e2ddf77a572e3e9d8985274eb5"></a>
 <div class="memitem">
 <div class="memproto">
@@ -399,7 +371,7 @@ Example Usage</h1>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="namespacepbirc.html">pbirc</a></li><li class="navelem"><a class="el" href="namespacepbirc_1_1irc.html">irc</a></li><li class="navelem"><a class="el" href="classpbirc_1_1irc_1_1_t_c_p_connection.html">TCPConnection</a></li>
-    <li class="footer">Generated on Mon Jul 15 2013 22:57:47 for PandoraBotIRC by
+    <li class="footer">Generated on Thu Jul 18 2013 13:43:58 for PandoraBotIRC by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.4 </li>
   </ul>

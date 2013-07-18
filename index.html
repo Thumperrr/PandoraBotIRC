@@ -65,7 +65,6 @@ $(document).ready(function(){initNavTree('index.html','');});
 </div><!--header-->
 <div class="contents">
 <div class="textblock"><p>An IRC bot that acts as a Pandora chatter bot. To be entered in the cplusplus.com monthly <a href="http://cppcomp.netne.net/showthread.php?tid=4">community competition</a></p>
-<p><a href="https://github.com/Thumperrr/PandoraBotIRC">Click here</a> to view the project's GitHub repository.</p>
 <h4>Planned features</h4>
 <ul>
 <li>[x] Respond to channel messages with chatter bot replies</li>
@@ -84,37 +83,34 @@ $(document).ready(function(){initNavTree('index.html','');});
 <h4>OS x 10.8+</h4>
 <ul>
 <li><a href="https://github.com/Thumperrr/PandoraBotIRC/archive/master.zip">Clone</a> the git repository.</li>
-<li>Run <code>make</code> from the terminal where you saved the repo.</li>
-<li><code>pbirc</code> is the bot executable.</li>
+<li>Run the CMake GUI.</li>
+<li>Enter the directory you cloned the repo to in the source code field.</li>
+<li>Enter where you want to build the binaries (Usually in the same directory as the source code field)</li>
+<li>Select configure, choose Unix Makefiles. (Note: At this point, you may select which compiler you want to use to build the project. You will have to have SFML built properly with the compiler you choose.)</li>
+<li>Select Generate (assuming there have been no errors).</li>
+<li>From the terminal in the directory you chose to build the binaries, run <code>make</code>.</li>
 </ul>
 <h4>Other</h4>
 <p>You're on your own for now.</p>
 <h4>Dependencies</h4>
 <ul>
 <li>Requires SFML 2.0</li>
-<li>Requires Boost 1.35.0 or greater.</li>
+<li>Requires Boost 1.53.0 or greater.</li>
 </ul>
-<p>SFML and boost must be built and installed in the default place on os x (/usr/local/lib and /usr/local/include/)</p>
-<ul>
-<li>Requires clang 3.3, which should be installed with the Apple Command Line Tools which you can get from the Apple developer web page. If not, you can install it via MacPorts.</li>
-</ul>
+<p>SFML must be built properly with the compiler you choose to build the project with.</p>
+<p>Boost must be in the default location on your system (somewhere CMake can find it &ndash; /usr/local/lib or /opt/local/lib, etc.)</p>
 <h1>Usage </h1>
 <h4>Command Line</h4>
-<p>PandoraBotIRC is designed to be a command line tool. Four parameters must be supplied to <code>pbirc</code> when ran; server, port, nick, channel. Example: </p>
-<pre class="fragment">./pbirc irc.freenode.net 6667 pandoraBot, cplusplus
-</pre><p>will start the bot on irc.freenode.net, port 6667, with nick "pandoraBot" in the channel "#cplusplus".</p>
+<p>PandoraBotIRC is designed to be a command line tool. Four parameters must be supplied to <code>pbirc</code> when ran; server, port, nick, channel. Example: <code>./pbirc irc.freenode.net 6667 pandoraBot, cplusplus</code> will start the bot on irc.freenode.net, port 6667, with nick "pandoraBot" in the channel "#cplusplus".</p>
 <h4>Talking to the bot</h4>
-<p>In an IRC chat, to begin a conversation with the bot, type the !BotTalk command.<br/>
- The bot should greet you.<br/>
- Now, anything you type the bot will consider directed toward it, and will respond promptly.<br/>
- To stop a conversation with the bot, type !BotStop.</p>
+<p>In an IRC chat, to begin a conversation with the bot, type the !BotTalk command. The bot should greet you. Now, anything you type the bot will consider directed toward it, and will respond promptly. To stop a conversation with the bot, type !BotStop.</p>
 <p>The bot is capable of having conversations with multiple users at the same time. Using !BotTalk will not interfere with another users's conversation.</p>
 <h4>Other Commands</h4>
 <ul>
 <li>Typing "!BotQuit" will terminate the bot.</li>
 <li>Typing "!BotHalt" will put the bot in an idle state, temporarily suspending it from responding to anyone.</li>
 <li>Typing "!BotResume" will reverse the effects of !BotHalt</li>
-<li>Typing "!BotID &lt;ID&gt;" will change the bot you are talking to to the bot specified by the parameter ID. This command only works if you have already started a conversation with the bot by typing !BotTalk. For more on BotIDs, see the <a href="classpbirc_1_1cb_1_1_pandora_bot.html#details">PandoraBot</a> reference.</li>
+<li>Typing "!BotID &lt;ID&gt;" will change the bot you are talking to to the bot specified by the parameter ID. This command only works if you have already started a conversation with the bot by typing !BotTalk. For more on BotIDs, see the PandoraBot reference.</li>
 <li>Typing "!BotHelp" will tell you all of the commands the bot handles.</li>
 </ul>
 <h1>TODO: </h1>
@@ -124,7 +120,7 @@ $(document).ready(function(){initNavTree('index.html','');});
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="footer">Generated on Mon Jul 15 2013 22:57:47 for PandoraBotIRC by
+    <li class="footer">Generated on Thu Jul 18 2013 13:43:58 for PandoraBotIRC by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.4 </li>
   </ul>

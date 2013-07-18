@@ -81,18 +81,24 @@ $(document).ready(function(){initNavTree('md___users__steve__git_hub__pandora_bo
 </ul>
 <h1>Building </h1>
 <h4>OS x 10.8+</h4>
-<p><a href="https://github.com/Thumperrr/PandoraBotIRC/archive/master.zip">Clone</a> the git repository. Run <code>make</code> from the terminal where you saved the repo. <code>pbirc</code> is the bot executable.</p>
+<ul>
+<li><a href="https://github.com/Thumperrr/PandoraBotIRC/archive/master.zip">Clone</a> the git repository.</li>
+<li>Run the CMake GUI.</li>
+<li>Enter the directory you cloned the repo to in the source code field.</li>
+<li>Enter where you want to build the binaries (Usually in the same directory as the source code field)</li>
+<li>Select configure, choose Unix Makefiles. (Note: At this point, you may select which compiler you want to use to build the project. You will have to have SFML built properly with the compiler you choose.)</li>
+<li>Select Generate (assuming there have been no errors).</li>
+<li>From the terminal in the directory you chose to build the binaries, run <code>make</code>.</li>
+</ul>
 <h4>Other</h4>
 <p>You're on your own for now.</p>
 <h4>Dependencies</h4>
 <ul>
 <li>Requires SFML 2.0</li>
-<li>Requires Boost 1.35.0 or greater.</li>
+<li>Requires Boost 1.53.0 or greater.</li>
 </ul>
-<p>SFML and boost must be built and installed in the default place on os x (/usr/local/lib and /usr/local/include/)</p>
-<ul>
-<li>Requires clang 3.3, which should be installed with the Apple Command Line Tools which you can get from the Apple developer web page. If not, you can install it via MacPorts.</li>
-</ul>
+<p>SFML must be built properly with the compiler you choose to build the project with.</p>
+<p>Boost must be in the default location on your system (somewhere CMake can find it &ndash; /usr/local/lib or /opt/local/lib, etc.)</p>
 <h1>Usage </h1>
 <h4>Command Line</h4>
 <p>PandoraBotIRC is designed to be a command line tool. Four parameters must be supplied to <code>pbirc</code> when ran; server, port, nick, channel. Example: <code>./pbirc irc.freenode.net 6667 pandoraBot, cplusplus</code> will start the bot on irc.freenode.net, port 6667, with nick "pandoraBot" in the channel "#cplusplus".</p>
@@ -114,7 +120,7 @@ $(document).ready(function(){initNavTree('md___users__steve__git_hub__pandora_bo
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="footer">Generated on Mon Jul 15 2013 22:57:47 for PandoraBotIRC by
+    <li class="footer">Generated on Thu Jul 18 2013 13:43:58 for PandoraBotIRC by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.4 </li>
   </ul>
