@@ -24,8 +24,7 @@ Building
 - Run the CMake GUI.
 - Enter the directory you cloned the repo to in the source code field.
 - Enter where you want to build the binaries (Usually in the same directory as the source code field)
-- Select configure, choose Unix Makefiles.
-    (Note: At this point, you may select which compiler you want to use to build the project. You will have to have SFML built properly with the compiler you choose.)
+- Select configure, choose Unix Makefiles. (Note: At this point, you may select which compiler you want to use to build the project. You will have to have SFML built properly with the compiler you choose.)
 - Select Generate (assuming there have been no errors).
 - From the terminal in the directory you chose to build the binaries, run `make`. 
 
