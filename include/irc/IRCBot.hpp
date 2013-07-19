@@ -30,7 +30,7 @@ public:
     /**
      * @brief Virtual default destructor
      */
-    virtual ~IRCBot() = default;
+    virtual ~IRCBot() noexcept = default;
 
     /**
      * @brief esponsible for connecting to the irc server
