@@ -11,6 +11,8 @@
 
 #include "util/Utility.hpp"
 
+#include <boost/regex.hpp>
+
 #include <string>
 #include <exception>
 

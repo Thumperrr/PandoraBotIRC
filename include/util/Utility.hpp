@@ -10,10 +10,10 @@
 #define PandoraBotIRC_Utility_hpp
 
 #include <boost/algorithm/string.hpp>
+#include <boost/regex.hpp>
 
 #include <sstream>
 #include <iomanip>
-#include <regex>
 #include <string>
 
 namespace pbirc { namespace util {

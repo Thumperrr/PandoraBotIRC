@@ -27,10 +27,10 @@ namespace pbirc { namespace irc {
             return;
         }
 
-        static std::regex const regex("^(:(\\S+ ))?(\\S+ )((?!:).+?)?(:(.+))?(\r\n)?$");
-        std::smatch match;
+        static boost::regex const regex("^(:(\\S+ ))?(\\S+ )((?!:).+?)?(:(.+))?(\r\n)?$");
+        boost::smatch match;
 
-        if(std::regex_match(raw, match, regex))
+        if(boost::regex_match(raw, match, regex))
         {
             m_sender  = process_input(match[2]);
             m_command = process_input(match[3]);

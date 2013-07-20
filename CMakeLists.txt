@@ -43,9 +43,10 @@ endif()
 
 # Detect and add Boost
 # Only need to include -- No built libs are required here
-find_package(Boost 1.53.0 REQUIRED)
+find_package(Boost 1.53.0 REQUIRED regex)
 if(Boost_FOUND)
     include_directories(${Boost_INCLUDE_DIRS})
+    target_link_libraries(${EXECUTABLE_NAME} ${Boost_LIBRARIES})
 endif()
 
 # Optionally build docs

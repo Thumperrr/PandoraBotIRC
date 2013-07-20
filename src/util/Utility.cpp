@@ -47,8 +47,8 @@ namespace pbirc { namespace util {
 
     std::string stripHtml(std::string const &s)
     {
-        static const std::regex expr("<(.*?)>");
-        return std::regex_replace(s, expr, "");
+        static const boost::regex expr("<(.*?)>", boost::regex::ECMAScript);
+        return boost::regex_replace(s, expr, "");
     }
 
     template<typename ReverseIter>
