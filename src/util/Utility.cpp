@@ -47,7 +47,7 @@ namespace pbirc { namespace util {
 
     std::string stripHtml(std::string const &s)
     {
-        static const boost::regex expr("<(.*?)>", boost::regex::ECMAScript);
+        static const boost::regex expr("<(.*?)>");
         return boost::regex_replace(s, expr, "");
     }
 
