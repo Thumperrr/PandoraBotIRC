@@ -52,7 +52,7 @@ public:
     /**
      * @brief Default destructor
      */
-    virtual ~PandoraIRCBot() noexcept;
+    virtual ~PandoraIRCBot() noexcept {}
 
     /**
      * @brief Value initialized constructor
