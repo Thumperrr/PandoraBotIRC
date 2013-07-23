@@ -19,7 +19,7 @@ To be entered in the cplusplus.com monthly [community competition](http://cppcom
 
 Building
 ========
-####OS x 10.8+
+####OS x 10.8+ and Linux
 - [Clone](https://github.com/Thumperrr/PandoraBotIRC/archive/master.zip) the git repository.
 - Run the CMake GUI.
 - Enter the directory you cloned the repo to in the source code field.
@@ -33,11 +33,14 @@ You're on your own for now.
 
 ####Dependencies
 - Requires SFML 2.0
-- Requires Boost 1.53.0 or greater.
+- Requires Boost 1.50.0 or greater.
 
 SFML must be built properly with the compiler you choose to build the project with.
 
 Boost must be in the default location on your system (somewhere CMake can find it -- /usr/local/lib or /opt/local/lib, etc.)
+
+- Tested working on OS x - clang 3.3
+- Tested working on Linux - gcc 4.7.2
 
 Usage
 =====
