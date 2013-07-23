@@ -69,7 +69,3 @@ The bot is capable of having conversations with multiple users at the same time.
 TODO:
 =====
 Licensing
-
-Known Problems:
-===============
-- Unable to compile on gcc toolchains because gcc regex support is incomplete. Need to create a workaround, or switch to boost::regex
