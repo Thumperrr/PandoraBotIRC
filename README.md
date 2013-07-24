@@ -65,7 +65,3 @@ The bot is capable of having conversations with multiple users at the same time.
 - Typing "!BotResume" will reverse the effects of !BotHalt
 - Typing "!BotID <ID>" will change the bot you are talking to to the bot specified by the parameter ID. This command only works if you have already started a conversation with the bot by typing !BotTalk. For more on BotIDs, see the PandoraBot reference.
 - Typing "!BotHelp" will tell you all of the commands the bot handles.
-
-TODO:
-=====
-Licensing
