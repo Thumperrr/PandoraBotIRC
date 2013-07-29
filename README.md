@@ -17,6 +17,10 @@ To be entered in the cplusplus.com monthly [community competition](http://cppcom
 - [x] Implement !BotHelp command -- Sends a list of all possible commands
 - [ ] Connect to multiple channels (OPTIONAL)
 
+####Documentation
+Doxygen documentation is hosted on this repository's gh-pages.
+[Click here](http://thumperrr.github.io/PandoraBotIRC/index.html) to go to it.
+
 Building
 ========
 ####OS x 10.8+ and Linux
